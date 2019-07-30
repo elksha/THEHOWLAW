@@ -19,9 +19,9 @@
 }
 
 body {
-    background: #ffd89b;
-    background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
-    background: linear-gradient(to right, #ffd89b, #19547b);
+    background: #ffafbd;
+    background: -webkit-linear-gradient(to right, #ffafbd, #ffc3a0);
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
 }
   
 .form-control::placeholder {
