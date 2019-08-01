@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}  
+<body>
+    <h2>{{ post.title }}</h2>
+    <img src="{{ post.img.url }}" width="300" height="470" />
+    <h5 class="liist">{{ post.contents }}</h5>
+    <h5 class="liist">{{ post.price }}</h5>
+    <h5 class="liist">{{ post.score }}</h5>
+    <a href="{% url 'home' %}">글 목록으로 돌아가기</a><br>
+    {% if user.is_authenticated and post.author == user.username %}
+    <a href="{% url 'edit' post.pk %}">수정하기</a><br>
+    <a href="{% url 'delete' post.pk %}">삭제하기</a>
+    {% endif %}
+    <h2>댓글 창</h2><br>
+    <ul>
+        {% for comment in post.comments.all %}
+            <li class="comment_list">{{ comment.content }}<a href="{% url 'delete_comment' post.pk comment.pk %}">삭제하기!</a></li>
+        {% endfor %}
+    </ul>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" />
+    </form>
+</body>
+{% endblock %}

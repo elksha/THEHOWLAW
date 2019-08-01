@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import path, include
+from howlaw import views
 
 urlpatterns = [
     url(r'^chat/', include('chat.urls')),
     url(r'^admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('new/', views.new, name='new'),
+    path('detail/<int:post_pk>/', views.detail, name='detail'),
+    path('edit/<int:post_pk>/', views.edit, name = 'edit'),
+    path('delete/<int:post_pk>/', views.delete, name = 'delete'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', views.signup, name='signup'),
 ]
