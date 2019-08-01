@@ -1,0 +1,144 @@
+<!-- 개인정보수정 -->
+<!-- 회원가입 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>개인정보수정</title>
+</head>
+<body>
+    <div class="container">
+        <h1>개인정보수정</h1>
+        <p>아래의 빈칸을 채워주세요.</p>
+        <hr>
+
+        <label for="email"><b>이름</b></label>
+        <input type="text" placeholder="이름" name="email" required>
+
+        <label for="email"><b>이메일 주소</b></label>
+        <input type="text" placeholder="이메일 주소" name="email" required>
+    
+        <label for="psw"><b>비밀번호</b></label>
+        <input type="password" placeholder="비밀번호" name="psw" required>
+    
+        <label for="psw-repeat"><b>비밀번호 확인</b></label>
+        <input type="password" placeholder="비밀번호 확인" name="psw-repeat" required>
+
+        <label for="psw-repeat"><b>휴대전화 번호</b></label>
+        <input type="text" placeholder="휴대전화 번호" name="psw-repeat" required>
+        
+    
+        <div>
+          <label for="favorite"><b>관심사</b></label>
+          <div class="favorite">
+            운동 <input type="checkbox" name="hobby" value="exercise" checked />
+            영화 <input type="checkbox" name="hobby" value="movie" />
+            음악 <input type="checkbox" name="hobby" value="music" />
+            기타 <input type="checkbox" name="hobby" value="ect" />
+          </div>
+        <br>
+       
+        <div class="clearfix">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
+    </form>
+</body>
+
+<style>
+  * {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.gender{
+  margin-top: 5px;
+}
+.favorite{
+  margin-top: 5px;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</html>
