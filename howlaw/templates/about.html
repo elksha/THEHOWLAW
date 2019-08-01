@@ -79,7 +79,6 @@
             
         }
 
-
         h2{
             margin: 0px;
         }
@@ -95,7 +94,6 @@
         <div class="about logobox">
           <img class="about logo" src="{% static 'logo.jpg' %}" />
         </div>
-        {% comment %} <div class="about slogandiv"></div> {% endcomment %}
       </div>
       <div class="about functions">
         <div class="about function box">
@@ -104,10 +102,11 @@
               <div class="h2">
                 <h2>사례/키워드로 검색</h2>
               </div>
+
             </div>
-            <div class="about function detail det2">
+              <div class="about function detail det2">
                 <p>&nbsp;&nbsp;어떡하노는 생활과 밀접한 법령부터 판례, 상담사례까지 로스쿨 재학생의 해설을 통해 더욱 쉽게 이해할 수 있도록 돕습니다. </p>
-            </div>
+              </div>
         </div>
         <div class="about function box">
           <div class="about div">
@@ -115,10 +114,11 @@
             <div class="h2">      
                 <h2>무료법률상담서비스 제공</h2>
             </div>
+
           </div>
-          <div class="about function detail det1">
+            <div class="about function detail det1">
             <p>&nbsp;&nbsp;어떡하노는 사회적 취약계층이 전문적인 법률상담을 무료로 받을 수 있도록 사용자분과 변호사를 연결해드립니다.</p>
-          </div>
+            </div>
         </div>
         <div class="about function box">
             <div class="about div">
@@ -126,19 +126,22 @@
                 <div class="h2">
                     <h2>공익 센터로의 연계</h2>
                 </div>
+
             </div>
-            <div class="about function detail det3">
-                <p>&nbsp;&nbsp;어떡하노는 상담 이후에도 지속적인 도움이 필요하신 경우, 상담내용을 분석하여 상황에 맞는 공익센터를 추천해드립니다.</p>
-            </div>
+                <div class="about function detail det3">
+                  <p>&nbsp;&nbsp;어떡하노는 상담 이후에도 지속적인 도움이 필요하신 경우, 상담내용을 분석하여 상황에 맞는 공익센터를 추천해드립니다.</p>
+                </div>
         </div>
     </div>
 
     <script>
         $('.detail').hide();
 
-        $('.div').children().click(function() {
-            $(this).children('.detail').slideToggle('slow');
-        })
+        $('.box').click(function() {
+          $('.detail').hide();
+          $('.detail', this).toggle();
+            }
+        )
     </script>
   </body>
 </html>
