@@ -28,4 +28,8 @@ urlpatterns = [
     path('delete/<int:post_pk>/', views.delete, name = 'delete'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
+    path('accounts/', include('allauth.urls')),
+    path('mypage_customer/', views.mypage_customer, name='mypage_customer'),
+    path('mypage_lawyer/', views.mypage_lawyer, name='mypage_lawyer'),
+    path('mypage_school/', views.mypage_school, name='mypage_school'),
 ]

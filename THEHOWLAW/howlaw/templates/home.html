@@ -1,7 +1,171 @@
 {% extends "base.html" %}
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
 <body>
-    hello
-</body>
+    <!-- 슬라이드화면, 챗봇메뉴, 메뉴바, 상담글작성 -->
+    <!-- 1. 슬라이드 화면 -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+        <img src="main1.jpg" style="width:100%">
+        <div class="text1">궁금한 법률도<br>쉽게 쓰인 판례도<br>전부 어떡하노에서<br>
+        <input type="search" value="교통사고가 났어요"></div>
+    </div>
+        
+        
+        <div class="mySlides fade">
+        <img src="main2.jpg" style="width:100%;">
+        <div class="text2">어떡하노는<br>사회취약계층에게<br>무료상담을 제공합니다</div>
+        </div>
+    </div>
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+            
+    <!-- 1-2.메뉴아이콘 -->
+    <i class="fas fa-bars menu"></i>
+    
+    <!-- 1-3.챗봇아이콘 -->
+    <i class="far fa-comment-dots chat"></i>
+    
+    <!-- 2. 챗봇메뉴 -->
+    <div id="chatbotmenu"></div>
+    
+    <!-- 3. 메뉴바 -->
+    <div id="menubar"></div>
+    
+    <!-- 4.상담글작성 -->
+    <div id="post"></div>
+
+
+
+<!-- 스타일 -->
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* menu icon */
+        .menu{
+            font-size: 1.5rem;
+            position: fixed;
+            top: 50px;
+            right: 40px;
+        }
+
+        /* chatbot icon */
+        .chat{
+            font-size: 1.5rem;
+            position: fixed;
+            top: 90px;
+            right: 40px;
+        }
+        /* Caption text */
+        .text1 {
+            color:white;
+            font-size: 1.7rem;
+            padding: 15px 12px;
+            margin-left: 10px;
+            position: absolute;
+            bottom: 300px;
+            width: 100%;
+            text-align: left;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .text2 {
+            color: #000000;
+            font-size: 1.7rem;
+            padding: 15px 12px;
+            margin-left: 10px;
+            position: absolute;
+            bottom: 300px;
+            width: 100%;
+            text-align: left;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            /* position: fixed;
+            top: 600px;
+            left: 100px; */
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 2s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+        .text {font-size: 11px}
+        }
+    </style>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
 {% endblock %}
-</html>

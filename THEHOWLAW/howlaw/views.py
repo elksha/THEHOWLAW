@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import PostForm, CommentForm, LogInForm, UserForm
+from .forms import PostForm, CommentForm, LogInForm, UserForm, SignUpForm
 from .models import Post, Comment
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -12,27 +12,27 @@ def home(request):
         
 def signup(request):
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             new_user = User.objects.create_user(**form.cleaned_data)
             auth.login(request, new_user)
             return redirect('home')
         else:
-            form = UserForm()
+            form = SignUpForm()
             error = "아이디가 이미 존재합니다"
             return render(request, 'registration/signup.html', {'form': form, 'error': error})
     else:
-        form = UserForm()
+        form = SignUpForm()
         return render(request, 'registration/signup.html', {'form': form})
 
 @login_required
 def new(request):
     if request.method == 'POST':
-        form = PostForm(request.POST,  request.FILES)
+        form = PostForm(request.POST)
         post = form.save(commit=False)
         post.author = request.user.get_username()
 
-        post.save()
+        # post.save()
 
         return redirect('detail', post_pk = post.pk)
     else:
@@ -72,3 +72,12 @@ def delete(request, post_pk):
     post = Post.objects.get(pk = post_pk)
     post.delete()
     return redirect('home')
+
+def mypage_customer(request):
+    return render(request, 'mypage_customer.html')
+
+def mypage_lawyer(request):
+    return render(request, 'mypage_lawyer.html')
+
+def mypage_school(request):
+    return render(request, 'mypage_school.html')

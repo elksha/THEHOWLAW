@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}  
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <script
+  src="http://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <style>
+      .main{
+        background-color: coral;
+      }
+
+      .together{ 
+        background-position: center;
+        background-size: cover;
+        font-size: 30px;
+        text-align: center; 
+        height: 30%;
+        padding: 10px;
+        color: coral;
+      }
+
+      .sectors{
+        display: inline;
+        margin: 10px 0px;
+        width: 80%;
+      }
+
+      .sector{
+        border: 1px solid coral;
+        border-radius: 20px;
+        background-color: white;
+        text-align: center;
+        color: white;
+        margin: 0px 30px 50px 30px;
+        padding: 20px;
+
+        box-shadow: 5px 5px 5px grey;
+      }
+
+      .links{
+        border: 1px solid coral;
+        background-color: coral;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      h5 {
+        color: coral;
+      }
+
+    </style>
+    <div class='centers main'>
+      <div class='centers together'>
+        <h2>공익센터 집합소</h2>
+      </div>
+      <div class='centers sectors'>
+        <div class='centers sector'>
+          <h5>여성인권</h5>
+          <div class='centers links'>
+            <a href="http://www.help0365.or.kr/">해바라기 센터</a>
+          </div>
+        </div>
+
+        <div class='centers sector'>
+          <h5>장애인권</h5>
+          <div class='centers links'>
+            <a href="http://kmdpcil.com/">한국정신장애인 자립생활센터</a>
+          </div>
+        </div>
+
+        <div class='centers sector'>
+          <h5>이주민 인권</h5>
+          <div class='centers links'>
+          </div>
+        </div>
+
+        <div class='centers sector'>
+          <h5>빈곤과 복지</h5>
+          <div class='centers links'>
+            <a href="https://swlc.welfare.seoul.kr/swlc/index.action/">서울사회복지공익법센터</a>
+          </div>
+        </div>
+
+        <div class='centers sector'>
+          <h5>그 외</h5>
+          <div class='centers links'>
+            <a href="https://humanrights.korea.ac.kr/hrc/index.do/">고려대학교 인권센터</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script >
+    
+      $('.links').hide();
+
+      $('.sector').click(function() {
+          $('.links', this).toggle();
+      })  
+
+    </script>
+  </body>
+</html>
+{% endblock %}

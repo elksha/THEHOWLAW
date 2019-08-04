@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'img', 'contents', 'price', 'score',]
+        fields = ['name', 'pwd', 'post',]
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -15,7 +15,7 @@ class CommentForm(forms.ModelForm):
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('email', 'password')
         widgets = {
             'password': forms.PasswordInput()
         }
@@ -23,7 +23,7 @@ class UserForm(forms.ModelForm):
 class LogInForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('email', 'password')
         widgets = {
             'password': forms.PasswordInput()
         }
@@ -31,7 +31,7 @@ class LogInForm(forms.ModelForm):
 class SignUpForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('username','first_name', 'last_name', 'password', 'email')
+        fields = ('username','email', 'password',)
         widgets = {
             'password': forms.PasswordInput()
         }

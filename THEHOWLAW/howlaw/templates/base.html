@@ -9,11 +9,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-  <div class="navbar">
-    <div class="navitem">HOME</div>
-    <div class="navitem">로그인</div>
-    <div class="navitem">회원가입</div>
-    <div class="navitem">로그아웃</div>
+  <div>
+    <ul>
+      {% if user.is_authenticated %}
+      <li>
+        <a href="#">Hello, {{ user.username }}</a>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}">LOG OUT</a>
+      </li>
+      <li>
+        <a href="{% url 'new' %}">새로운 글쓰기</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{% url 'login' %}">LOG IN</a>
+      </li>
+      <li>
+        <a href="{% url 'signup' %}">SIGN UP</a>
+      </li>
+      {% endif %}
+    </ul>
   </div>
 {% block content %}
 
