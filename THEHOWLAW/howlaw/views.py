@@ -28,11 +28,11 @@ def signup(request):
 @login_required
 def new(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         post = form.save(commit=False)
-        post.author = request.user.get_username()
+        post.name = request.user.get_username()
 
-        # post.save()
+        post.save()
 
         return redirect('detail', post_pk = post.pk)
     else:

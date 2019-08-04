@@ -11,6 +11,19 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 잠시 꼽사리 -->
+    {% for post in posts %}
+        <div>
+            <h2><a href="{% url 'detail' post.pk %}">{{ post.title }}</a></h2>
+            <img src="{{ post.img.url }}" />
+        </div>
+    {% endfor %}
+    <a href="{% url 'new' %}">사진 올리기</a>
+    <!-- 잠시 꼽사리 -->
+
+
+
+
     <!-- 슬라이드화면, 챗봇메뉴, 메뉴바, 상담글작성 -->
     <!-- 1. 슬라이드 화면 -->
     <div class="slideshow-container">

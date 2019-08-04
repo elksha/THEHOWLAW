@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <!-- 회원가입 페이지 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -28,25 +29,24 @@
           <input type="password" placeholder="password" name="password" required>
       
           <label for="psw-repeat"><b>비밀번호 확인</b></label>
-          <input type="password" placeholder="비밀번호 확인" name="psw-repeat" required>
+          <input type="password" placeholder="비밀번호 확인" required>
 
           <label for="psw-repeat"><b>휴대전화 번호</b></label>
-          <input type="text" placeholder="휴대전화 번호" name="psw-repeat" required>
+          <input type="text" placeholder="휴대전화 번호" required>
           
           <div>
             <label for="gender"><b>성별</b></label>
             <div class="gender">
-              남성 <input type="radio" name="gender" value="male" checked />
+              남성 <input type="radio" value="male" checked />
               여성 <input type="radio" name="gender" value="female" />
             </div>
           </div>
-        </form>
 
         <br>
         <div>
           <label for="favorite"><b>관심사</b></label>
           <div class="favorite">
-            근로/노동 <input type="checkbox" name="hobby" value="exercise" checked />
+            근로/노동 <input type="checkbox" value="exercise" checked />
             소비자 <input type="checkbox" name="hobby" value="movie" />
             교통/운전 <input type="checkbox" name="hobby" value="music" />
             <br>
@@ -67,7 +67,7 @@
         <br>
         
         <label>
-          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 아이디 저장
+          <input type="checkbox" checked="checked" style="margin-bottom:15px"> 아이디 저장
         </label>
     
         <p>계정 생성은 약관에 동의하는 것으로 간주합니다.<a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>

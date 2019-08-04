@@ -12,12 +12,12 @@
 <body>
     <div class="main">
         <div class="title">상담글쓰기</div>
-        <form method="POST">
+        <form method="POST" enctype='multipart/form-data'>
         {% csrf_token %}
             <div class="private">
                 <div class ="name">
                     <div>이름</div>
-                    <div><input type="text" placeholder="name" name="name" style="width: 210px"></div>
+                    <div><input type="text" placeholder="title" name="title" style="width: 210px"></div>
                 </div>
                 <div class ="pwd">
                     <div>비밀번호</div>
@@ -25,10 +25,10 @@
                 </div>
             </div>
             <div class="post">
-                <textarea name ="post" placeholder="contents" name="contents" cols="37" rows="10"></textarea> 
+                <textarea name ="post" placeholder="post" cols="37" rows="10"></textarea> 
             </div>
             <div class="function">
-                <div><i class="fas fa-camera" name="img" placeholder="img"></i></div>
+                <div><i class="fas fa-camera" placeholder="img"><input type="file" name="img"></i></div>
                 <div><i class="fas fa-video"></i></div>
                 <div><i class="fas fa-link"></i></div>
                 <div><i class="fas fa-microphone"></i></div>
