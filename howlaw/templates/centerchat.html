@@ -16,6 +16,7 @@
   
   <body>
     <style type="text/css">
+    
       html, body {
       height: 100%;
       overflow: hidden;
@@ -113,6 +114,10 @@
 </div>
 
     <script type="text/javascript">
+      $('.main').scroll(function() {
+        console.log("hi");
+      })
+      
       $('input').click(function() {
         this.value = ""
         })
@@ -130,7 +135,6 @@
         $('.lawyerchat main').append(newchat)
         userwrite.value = ""
       })
-
         
     </script>
   </body>
