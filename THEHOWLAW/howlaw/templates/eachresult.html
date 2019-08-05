@@ -10,6 +10,23 @@
     <link href="instyle.css" rel="stylesheet">
     <title>Document</title>
 </head>
+<style>
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle, .btn-outline-secondary:hover {
+  color: #6c757d;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+  border-right-color: lightgray;
+  border-radius: 0;
+}
+.btn-outline-secondary {
+  border-color: rgba(0,0,0,0);
+  border-right-color: lightgray;
+  border-radius: 0;
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-secondary.dropdown-toggle:focus, .btn:focus {
+  box-shadow: 0 0 0 0;
+}
+</style>
 <body>
     <div><i class="fas fa-chevron-left fa-2x" style="padding: 1rem; padding-top: 0.7rem; padding-bottom: 0.7rem; color: #FFFFFF"></i></div>
     <h4 class="text-white" style="padding: 2rem; padding-top: 0.5rem; padding-bottom: 0rem;">찾기쉬운</br> 생활법령</h5>
@@ -17,11 +34,20 @@
             <form action="">
                 <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style="margin-bottom: 1rem!important;">
                     <div class="input-group">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input type="search" placeholder="검색해보세요" aria-describedby="button-addon2" class="form-control border-0 bg-light">
                     <div class="input-group-prepend">
-                        <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+                        <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>                 
                     </div>
-                    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2" class="form-control border-0 bg-light">
-                    </div>
+                  </div>
                 </div>
             </form>
           </div>
@@ -147,6 +173,15 @@
           prevArrow: null,
           slidestoShow: 1,
         });
+    });
+    $(document).ready(function(e){
+      $('.dropdown-menu').find('a').click(function(e) {
+        e.preventDefault();
+        var param = $(this).attr("href").replace("#","");
+        var concept = $(this).text();
+        $('.dropdown-toggle').text(concept);
+        $('#search_param').val(param);
+	    });
     });
 </script>
 </html>
