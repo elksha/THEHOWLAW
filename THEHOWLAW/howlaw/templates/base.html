@@ -13,7 +13,7 @@
     <ul>
       {% if user.is_authenticated %}
       <li>
-        <a href="#">Hello, {{ user.username }}</a>
+        <a href="{% url 'mypage_customer' %}">Hello, {{ user.username }}</a>
       </li>
       <li>
         <a href="{% url 'logout' %}">LOG OUT</a>

@@ -19,7 +19,7 @@ from django.urls import path, include
 from howlaw import views
 
 urlpatterns = [
-    url(r'^chat/', include('chat.urls')),
+    url(r'^chat/', include('chat.urls'), name='chat'),
     url(r'^admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('new/', views.new, name='new'),
@@ -32,4 +32,6 @@ urlpatterns = [
     path('mypage_customer/', views.mypage_customer, name='mypage_customer'),
     path('mypage_lawyer/', views.mypage_lawyer, name='mypage_lawyer'),
     path('mypage_school/', views.mypage_school, name='mypage_school'),
+    path('chatbot_menu/', views.chatbot_menu, name='chatbot_menu'),
+    path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
 ]

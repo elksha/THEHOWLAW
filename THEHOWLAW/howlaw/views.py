@@ -14,9 +14,9 @@ def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            new_user = User.objects.create_user(**form.cleaned_data)
-            auth.login(request, new_user)
-            return redirect('home')
+            # new_user = User.objects.create_user(**form.cleaned_data)
+            # auth.login(request, new_user)
+            return redirect('login')
         else:
             form = SignUpForm()
             error = "아이디가 이미 존재합니다"
@@ -81,3 +81,9 @@ def mypage_lawyer(request):
 
 def mypage_school(request):
     return render(request, 'mypage_school.html')
+
+def chatbot_menu(request):
+    return render(request, 'chatbot_menu.html')
+
+def lawyer_chat(request):
+    return render(request, 'room.html')
