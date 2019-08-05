@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div>
+    <ul>
+      {% if user.is_authenticated %}
+      <li>
+        <a href="{% url 'mypage_customer' %}">Hello, {{ user.username }}</a>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}">LOG OUT</a>
+      </li>
+      <li>
+        <a href="{% url 'new' %}">새로운 글쓰기</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{% url 'login' %}">LOG IN</a>
+      </li>
+      <li>
+        <a href="{% url 'signup' %}">SIGN UP</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
