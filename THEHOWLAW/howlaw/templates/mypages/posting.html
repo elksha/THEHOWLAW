@@ -10,31 +10,33 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main">
+    <div class="counselmain">
         <div class="title">상담글쓰기</div>
-        <div class="private">
-            <div class ="name">
-                <div>이름</div>
-                <div><input type="text" style="width: 210px"></div>
+        <div class="bodypost">
+            <div class="private">
+                <div class ="name">
+                    <div>이름</div>
+                    <div><input type="text" style="width: 210px"></div>
+                </div>
+                <div class ="pwd">
+                    <div>비밀번호</div>
+                    <div><input type="password" style="width: 210px"></div>
+                </div>
             </div>
-            <div class ="pwd">
-                <div>비밀번호</div>
-                <div><input type="password" style="width: 210px"></div>
+            <div class="post">
+                <textarea name ="post" cols="37" rows="10"></textarea> 
             </div>
-        </div>
-        <div class="post">
-            <textarea name ="post" cols="37" rows="10"></textarea> 
-        </div>
-        <div class="function">
-            <div><i class="fas fa-camera"></i></div>
-            <div><i class="fas fa-video"></i></div>
-            <div><i class="fas fa-link"></i></div>
-            <div><i class="fas fa-microphone"></i></div>
-        </div>
-        <div class="buttons">
-            <button type="button" class="btn btn-danger">삭제하기</button>
-            <button type="button" class="btn btn-danger">임시저장</button>
-            <button type="button" class="btn btn-danger">보내기</button>
+            <div class="function">
+                <div><i class="fas fa-camera"></i></div>
+                <div><i class="fas fa-video"></i></div>
+                <div><i class="fas fa-link"></i></div>
+                <div><i class="fas fa-microphone"></i></div>
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn btn-danger">삭제하기</button>
+                <button type="button" class="btn btn-danger">임시저장</button>
+                <button type="button" class="btn btn-danger">보내기</button>
+            </div>
         </div>
     </div>
 </body>
@@ -44,10 +46,10 @@
     body{
         background-color: #eeeeee;
     }
-    .main{
+    .counselmain{
         margin: 0 auto;
         width: 366px;
-        margin-top: 60px;
+        margin-top: 30px;
         font-family: 'Noto Sans KR', sans-serif;
         
     }
