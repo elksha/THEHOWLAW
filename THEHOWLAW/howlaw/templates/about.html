@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap"
-      rel="stylesheet"
-    />
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script
       src="http://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -19,7 +16,8 @@
   <body>
     <style>
       body{
-        background-color: #FAB390;
+        background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
+        /* background-color: #FAB390; */
       }
 
       .upper{
@@ -67,11 +65,11 @@
       .function {
         display: flex;
         flex-direction: column;
-        text-align: center;
+font-family: 'Noto Sans KR', sans-serif
       }
 
         .box{
-            background-color: white;
+            background-color: rgb(255, 2555, 255, 0.5);
             border-radius: 20px;
             margin: 0px 30px 50px 30px;
             padding: 20px;
@@ -86,6 +84,10 @@
         .div{
             display: flex;
             align-items: center;
+        }
+
+        p{
+          font-size: 20px;
         }
 
     </style>
@@ -133,6 +135,7 @@
     </div>
 
     <script>
+    
         $('.detail').hide();
 
         $('.box').click(function() {

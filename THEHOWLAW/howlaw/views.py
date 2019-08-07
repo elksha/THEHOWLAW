@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+from django.shortcuts import render
+
+# Create your views here.
+=======
 from django.shortcuts import render, redirect
 from .forms import PostForm, CommentForm, LogInForm, UserForm, SignUpForm
 from .models import Post, Comment
@@ -6,11 +11,9 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import requests
 
-# Create your views here.
-<<<<<<< HEAD
 def social(request):
     return render(request,'social.html')
-=======
+
 def home(request):
     return render(request, 'home.html')
         
@@ -105,4 +108,3 @@ def detail_list(request):
 
 def lawyer_chat(request):
     return render(request, 'room.html')
->>>>>>> juno
