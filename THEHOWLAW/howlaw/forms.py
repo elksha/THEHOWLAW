@@ -23,7 +23,7 @@ class UserForm(forms.ModelForm):
 class LogInForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('email', 'password')
+        fields = ('username', 'password')
         widgets = {
             'password': forms.PasswordInput()
         }
