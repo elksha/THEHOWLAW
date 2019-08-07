@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+from django.shortcuts import render
+
+# Create your views here.
+=======
 from django.shortcuts import render, redirect
 from .forms import PostForm, CommentForm, LogInForm, UserForm, SignUpForm
 from .models import Post, Comment
@@ -6,11 +11,9 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import requests
 
-# Create your views here.
-<<<<<<< HEAD
 def social(request):
     return render(request,'social.html')
-=======
+
 def home(request):
     return render(request, 'home.html')
         
@@ -78,7 +81,9 @@ def delete(request, post_pk):
     return redirect('home')
 
 def mypage_customer(request):
-    return render(request, 'mypage_customer.html')
+    posts = Post.objects.all()
+    totalCnt = Post.objects.filter(name=request.user).count()
+    return render(request, 'mypage_customer.html', { 'totalCnt' : totalCnt })
 
 def mypage_lawyer(request):
     return render(request, 'mypage_lawyer.html')
@@ -89,6 +94,17 @@ def mypage_school(request):
 def chatbot_menu(request):
     return render(request, 'chatbot_menu.html')
 
+def menubar(request):
+    return render(request, 'menubar.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def centerslink(request):
+    return render(request, 'centerslink.html')
+
+def detail_list(request):
+    return render(request, 'detail_list.html')
+
 def lawyer_chat(request):
     return render(request, 'room.html')
->>>>>>> juno
