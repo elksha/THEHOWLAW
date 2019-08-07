@@ -34,4 +34,5 @@ urlpatterns = [
     path('mypage_school/', views.mypage_school, name='mypage_school'),
     path('chatbot_menu/', views.chatbot_menu, name='chatbot_menu'),
     path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
+    path('index/', views.index, name='index'),
 ]
