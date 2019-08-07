@@ -1,0 +1,86 @@
+.removepad {
+    padding: 0;
+    margin: 0;
+}
+
+.input-group>.form-control {
+    flex: 0.99 1 auto;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+  
+.form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+body {
+    background: #ffafbd;
+    background: -webkit-linear-gradient(to right, #ffafbd, #ffc3a0);
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+}
+ 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.uppert {
+    position: relative;
+    left: 10%;
+    top: 10%;
+    font-size: 2rem;  
+}
+
+.text-small {
+    font-size: 0.9rem !important;
+}
+  
+.custom-separator {
+    width: 5rem;
+    height: 6px;
+    border-radius: 1rem;
+}
+  
+.text-uppercase {
+    letter-spacing: 0.2em;
+}
+  
+.wrapper{
+    width:100%;
+    padding-top: 20px;
+    text-align:center;
+}
+
+h2{
+    font-family:sans-serif;
+    color:#fff;
+}
+
+.carousel{
+    width:100%;
+    margin:0px auto;
+}
+
+.carousel .mb-5 {
+    margin-bottom: 0.3rem!important;
+}
+
+.slick-slide{
+    margin:10px;
+}
+
+.slick-slide img{
+    width:100%;
+    border: 2px solid #fff;
+}

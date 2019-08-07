@@ -96,5 +96,8 @@ def about(request):
 def centerslink(request):
     return render(request, 'centerslink.html')
 
+def detail_list(request):
+    return render(request, 'detail_list.html')
+
 def lawyer_chat(request):
     return render(request, 'room.html')

@@ -35,6 +35,7 @@ urlpatterns = [
     path('menubar/', views.menubar, name='menubar'),
     path('centerslink/', views.centerslink, name='centerslink'),
     path('about/', views.about, name='about'),
+    path('detail_list/', views.detail_list, name='detail_list'),
     path('chatbot_menu/', views.chatbot_menu, name='chatbot_menu'),
     path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
 ]
