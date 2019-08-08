@@ -7,7 +7,10 @@ verify_ssl = true
 
 [packages]
 django = "*"
+<<<<<<< HEAD
 django-allauth = "*"
+=======
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
 
 [requires]
 python_version = "3.7"

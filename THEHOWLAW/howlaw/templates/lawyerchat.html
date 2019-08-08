@@ -45,7 +45,11 @@
       border-radius: 10px;
       margin: 10px 10px;
       height: 550px;  
+<<<<<<< HEAD
       overflow: auto;
+=======
+      overflow-y: auto;
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
       padding: 10px;
     }
 
@@ -59,6 +63,7 @@
       position: center;
     }
 
+<<<<<<< HEAD
 
     div.hidden{
       display: none;
@@ -68,12 +73,37 @@
       padding: 20px;
       background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
       // background: linear-gradient(-45deg, #64AAC3, #6081AC, #593982);
+=======
+    .box{
+      padding: 20px;
+      background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
+      /* background: linear-gradient(-45deg, #6CECDD, #5E72A4, #593982); */
+
+      font-family: 'Noto Sans KR', sans-serif;
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
       border: 1px solid #FE9B79;
       border-radius: 5px;
       width: 35%;
       margin: 20px;
+<<<<<<< HEAD
       font-family: 'Noto Sans KR', sans-serif;
       
+=======
+      float: right;
+    }
+
+    .box2{
+      padding: 20px;
+      /* background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A); */
+      background: linear-gradient(-45deg, #6CECDD, #5E72A4, #593982);
+
+      font-family: 'Noto Sans KR', sans-serif;
+      border: 1px solid #FE9B79;
+      border-radius: 5px;
+      width: 35%;
+      margin: 20px;
+      float: left;
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
     }
 
     .write{
@@ -92,12 +122,22 @@
       background-color: #E6E6E6;
       color: grey;
       width: 80%;
+<<<<<<< HEAD
       font-family: 'Noto Sans KR', sans-serif;
+=======
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
    }
 
    .fa-paper-plane{
       color: #FE9B79;
 }
+<<<<<<< HEAD
+=======
+
+    .hidden {
+      display: none;
+    }
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
     </style>
 
  <div class="lawyerchat body">
@@ -111,7 +151,11 @@
       </div>
     </div>
     <div class="lawyerchat main">
+<<<<<<< HEAD
         <div class="lawyerchat box hidden"> 어떡하노 변호사님과의 연락을 시작하겠습니다. </div>
+=======
+        <div class="lawyerchat box introbox hidden"> 어떡하노 변호사님과의 연락을 시작하겠습니다. </div>
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
     </div>
     <div class="lawyerchat write">
         <i class="fas fa-plus-circle"></i>
@@ -124,10 +168,15 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
+<<<<<<< HEAD
         $('div.hidden').fadeIn(1000).removeClass('hidden');
         })
 
       {/* $('div.main').scrollTop(10000); */}
+=======
+        $('.introbox').fadeIn(1000).removeClass('hidden')
+      })
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
 
       $('textarea').click(function() {
         if (this.placeholder === "여기에 입력하세요") {
@@ -143,6 +192,7 @@
           }
       })
 
+<<<<<<< HEAD
       {/* $('input').keyup(function() {
         if (event.keyCode === 13 && this.value) {
           let newchat = '<div class="lawyerchat box">' + this.value +  '</div>'
@@ -152,16 +202,21 @@
       }) */}
 
 
+=======
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
 
     for (var i = 0; i<10 ; i++) {
         if ($('.box')[i] = true){
           console.log($('.main')[0].scrollHeight);
         } 
     }
+<<<<<<< HEAD
 
     {/* $('.main').animate({
       scrollTop: $('.main')[0].scrollHeight()-$('.main').
     }) */}
+=======
+>>>>>>> 48e25c075427de62d4ade35ddb6978e9727b6a31
    
 
 

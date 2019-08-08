@@ -98,7 +98,7 @@
         <div class = "title">마이페이지</div>
         <img src="user.png" width="70px" height="70px">
         <div class="userid">
-          yuna322님,<br>안녕하세요
+          {{ user.username }}님,<br>안녕하세요
         </div>
         <div class="private">
             개인정보수정
@@ -106,7 +106,7 @@
         <div class="contents">
           <div class= "content1">
             <div>상담글</div>
-            <div>0건</div>
+            <div>{{ totalCnt }}건</div>
           </div>
           <div class= "content2">
             <div>변호사상담</div>
