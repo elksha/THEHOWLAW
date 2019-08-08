@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script
       src="http://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -17,7 +16,6 @@
   
   <body>
     <style type="text/css">
-    
       html, body {
       height: 100%;
       overflow: hidden;
@@ -27,10 +25,6 @@
       border: 1px solid lightgrey;
       border-radius: 20px;
       margin: 10px;
-    }
-
-    .main{
-      height: 550px;
     }
 
     .horizontal{
@@ -49,7 +43,9 @@
       border: 1px solid lightgrey;
       border-radius: 10px;
       margin: 10px 10px;
-      /* height: 550px;  */
+      height: 550px;  
+      overflow-y: scroll;
+      padding: 10px;
     }
 
     .far, .fas{
@@ -57,19 +53,35 @@
       margin: 0px 5px;
       font-size: 30px;
     }
-  
+
     .fas fa-grip-lines{
       position: center;
     }
 
     .box{
       padding: 20px;
-      background-color: coral;
-      border: 1px solid coral;
+      background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
+      /* background: linear-gradient(-45deg, #6CECDD, #5E72A4, #593982); */
+
+      font-family: 'Noto Sans KR', sans-serif;
+      border: 1px solid #FE9B79;
       border-radius: 5px;
       width: 35%;
       margin: 20px;
-      
+      float: right;
+    }
+
+    .box2{
+      padding: 20px;
+      /* background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A); */
+      background: linear-gradient(-45deg, #6CECDD, #5E72A4, #593982);
+
+      font-family: 'Noto Sans KR', sans-serif;
+      border: 1px solid #FE9B79;
+      border-radius: 5px;
+      width: 35%;
+      margin: 20px;
+      float: left;
     }
 
     .write{
@@ -87,7 +99,15 @@
       border: 0px;
       background-color: #E6E6E6;
       color: grey;
-      width: 60%;
+      width: 80%;
+   }
+
+   .fa-paper-plane{
+      color: #FE9B79;
+}
+
+    .hidden {
+      display: none;
     }
     </style>
 
@@ -102,41 +122,48 @@
       </div>
     </div>
     <div class="lawyerchat main">
-        <div class="lawyerchat box"> 어떡하노 변호사님과의 연락을 시작하겠습니다. </div>
+        <div class="lawyerchat box introbox hidden"> {{ user.username }}님 어서오세요. </div>
+        <div class="lawyerchat box introbox hidden"> {{ user.username }}님의 상담글을 분석한 결과 다음과 같은 카테고리를 확인할 수 있었습니다. <br> 원하는 카테고리를 선택해주세요. </div>
+        <div class="lawyerchat box introbox hidden">  </div>
     </div>
     <div class="lawyerchat write">
         <i class="fas fa-plus-circle"></i>
-        <input type="text" class="lawyerchat userwrite" value="여기에 입력하세요"/>
+        <textarea class="lawyerchat userwrite" placeholder="여기에 입력하세요"></textarea>
         <div class="lawyerchat send">
-          <i class="fas fa-microphone"></i>
           <i class="far fa-paper-plane"></i>
         </div>
     </div>
 </div>
 
     <script type="text/javascript">
-      $('.main').scroll(function() {
-        console.log("hi");
+      $(document).ready(function() {
+        $('.introbox').fadeIn(1000).removeClass('hidden')
       })
-      
-      $('input').click(function() {
-        this.value = ""
+
+      $('textarea').click(function() {
+        if (this.placeholder === "여기에 입력하세요") {
+            this.placeholder = "" 
+            } 
         })
-
-      $('input').keyup(function() {
-        if (event.keyCode === 13 && this.value) {
-          let newchat = '<div class="lawyerchat box">' + this.value +  '</div>'
-          $('.main').append(newchat)
-          this.value = ""
-        }
-      })
-
-      $('.fa-paper-plane').click(function() {
-        let newchat = '<div class="lawyerchat box">' + userwrite.value +  '</div>'
-        $('.lawyerchat main').append(newchat)
-        userwrite.value = ""
-      })
         
+      $('.fa-paper-plane').click(function() {  
+          if ($('textarea').val()) {
+              let newchat = '<div class="lawyerchat box">' + $('textarea').val() +  '</div>'    
+              $('.main').append(newchat)
+              $('textarea').val('')
+          }
+      })
+
+
+    for (var i = 0; i<10 ; i++) {
+        if ($('.box')[i] = true){
+          console.log($('.main')[0].scrollHeight);
+        } 
+    }
+   
+
+
+
     </script>
   </body>
 </html>
