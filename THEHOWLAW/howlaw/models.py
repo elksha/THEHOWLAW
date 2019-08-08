@@ -1,8 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
-
-# Create your models here.
-=======
 from django.utils import timezone
 
 # Create your models here.
@@ -20,4 +16,3 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e

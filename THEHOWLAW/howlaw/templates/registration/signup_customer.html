@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- 회원가입 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>회원가입</title>
+</head>
+<body>
+    <div class="container">
+        <h1>회원가입</h1>
+        <p>아래의 빈칸을 채워주세요.</p>
+        <hr>
+
+        <form method="POST">
+          {% csrf_token %}
+          <label for="email"><b>이름</b></label>
+          <input type="text" name="username" placeholder="username" required>
+
+          <label for="email"><b>이메일 주소</b></label>
+          <input type="text" name="email" placeholder="email" required>
+      
+          <label for="psw"><b>비밀번호</b></label>
+          <input type="password" placeholder="password" name="password" required>
+      
+          <label for="psw-repeat"><b>비밀번호 확인</b></label>
+          <input type="password" placeholder="비밀번호 확인" required>
+
+          <label for="psw-repeat"><b>휴대전화 번호</b></label>
+          <input type="text" placeholder="휴대전화 번호" required>
+          
+          <div>
+            <label for="gender"><b>성별</b></label>
+            <div class="gender">
+              남성 <input type="radio" value="male" checked />
+              여성 <input type="radio" name="gender" value="female" />
+            </div>
+          </div>
+
+        <br>
+        <div>
+          <label for="favorite"><b>관심사</b></label>
+          <div class="favorite">
+            근로/노동 <input type="checkbox" value="exercise" checked />
+            소비자 <input type="checkbox" name="hobby" value="movie" />
+            교통/운전 <input type="checkbox" name="hobby" value="music" />
+            <br>
+            부동산/임대차 <input type="checkbox" name="hobby" value="ect" />
+            금융/금전 <input type="checkbox" name="hobby" value="ect" />
+            창업 <input type="checkbox" name="hobby" value="ect" />
+            <br>
+            사업 <input type="checkbox" name="hobby" value="ect" />
+            민형사/소송 <input type="checkbox" name="hobby" value="ect" />
+            사회안전/범죄 <input type="checkbox" name="hobby" value="ect" />
+            <br>
+            가정법률 <input type="checkbox" name="hobby" value="ect" />
+            아동청소년/교육 <input type="checkbox" name="hobby" value="ect" />
+            <br>
+            정보통신/기술 <input type="checkbox" name="hobby" value="ect" />
+            환경/에너지 <input type="checkbox" name="hobby" value="ect" />
+          </div>
+        <br>
+        
+        <label>
+          <input type="checkbox" checked="checked" style="margin-bottom:15px"> 아이디 저장
+        </label>
+    
+        <p>계정 생성은 약관에 동의하는 것으로 간주합니다.<a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+        <div class="clearfix">
+          <a href="{% url 'home' %}"><button type="button" class="cancelbtn">Cancel</button></a>
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
+    </form>
+</body>
+
+<style>
+  * {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.gender{
+  margin-top: 5px;
+}
+.favorite{
+  margin-top: 5px;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</html>
+{% endblock %}

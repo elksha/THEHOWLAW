@@ -10,30 +10,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-<<<<<<< HEAD
-import os
-=======
 import os, json
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-<<<<<<< HEAD
-=======
 with open(os.path.join(BASE_DIR, 'THEHOWLAW/config/index.json')) as f:
     secrets = json.loads(f.read())
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-SECRET_KEY = '*8ui76orn-8gek0ux0=)(df2nr((gu(b)nmydzeewn23m+d(1q'
-=======
 SECRET_KEY = 'cw0d9k5nh!6^e#h25s9a8bt*s04r_b^i$uf*fna&m7pq@y&f01'
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,20 +33,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-=======
     'channels',
     'chat',
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'howlaw.apps.HowlawConfig',
-=======
     'django.contrib.sites',
     'howlaw.apps.HowlawConfig',
     'allauth',
@@ -66,7 +49,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.kakao',
     'allauth.socialaccount.providers.naver',
     'storages',
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
 ]
 
 MIDDLEWARE = [
@@ -84,11 +66,7 @@ ROOT_URLCONF = 'THEHOWLAW.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': [],
-=======
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -152,9 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-=======
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Channels
 ASGI_APPLICATION = 'THEHOWLAW.routing.application'
@@ -188,4 +165,3 @@ AWS_SECRET_ACCESS_KEY = secrets['AWS']['SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = secrets['AWS']['STORAGE_BUCKET_NAME']
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_REGION_NAME = 'ap-northeast-2'
->>>>>>> 092fff9cdfd52088a1fd30774dd6105137da367e
