@@ -10,32 +10,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-<<<<<<< HEAD
 import os, json
-=======
-import os
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-<<<<<<< HEAD
 with open(os.path.join(BASE_DIR, 'THEHOWLAW/config/index.json')) as f:
     secrets = json.loads(f.read())
-=======
-# with open(os.path.join(BASE_DIR, 'THEHOWLAW/config/index.json')) as f:
-#     secrets = json.loads(f.read())
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
 SECRET_KEY = 'cw0d9k5nh!6^e#h25s9a8bt*s04r_b^i$uf*fna&m7pq@y&f01'
-=======
-SECRET_KEY = ')g0!toh9wypz43af&ej-c6xfuou=f_2g5)tllq_v5=u)vwl19^'
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,32 +33,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
     'channels',
     'chat',
-=======
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'django.contrib.sites',
-=======
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
     'howlaw.apps.HowlawConfig',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
     'allauth.socialaccount.providers.naver',
-<<<<<<< HEAD
     'storages',
-=======
-    # 'storages',
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
 ]
 
 MIDDLEWARE = [
@@ -89,11 +66,7 @@ ROOT_URLCONF = 'crud.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-=======
-        'DIRS': [],
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -187,16 +160,8 @@ SITE_ID = 1
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # AWS Access
-<<<<<<< HEAD
 AWS_ACCESS_KEY_ID = secrets['AWS']['ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = secrets['AWS']['SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = secrets['AWS']['STORAGE_BUCKET_NAME']
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_REGION_NAME = 'ap-northeast-2'
-=======
-# AWS_ACCESS_KEY_ID = secrets['AWS']['ACCESS_KEY_ID']
-# AWS_SECRET_ACCESS_KEY = secrets['AWS']['SECRET_ACCESS_KEY']
-# AWS_STORAGE_BUCKET_NAME = secrets['AWS']['STORAGE_BUCKET_NAME']
-# AWS_S3_SIGNATURE_VERSION = "s3v4"
-# AWS_S3_REGION_NAME = 'ap-northeast-2'
->>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3

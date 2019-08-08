@@ -109,10 +109,8 @@ def detail_list(request):
     return render(request, 'detail_list.html')
 
 def lawyer_chat(request):
-    return render(request, 'room.html')
+    return render(request, 'lawyerchat.html')
 
 def room(request):
     return render(request, 'room.html')
 
-def about(request):
-    return render(request, 'about.html')

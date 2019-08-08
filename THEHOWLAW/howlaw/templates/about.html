@@ -23,7 +23,7 @@
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: #5a5a5a;
+  /* color: #5a5a5a; */
 }
 
 p, h1, h2 {
@@ -147,18 +147,49 @@ p, h1, h2 {
       background-repeat: no-repeat;      
     }
 
-  nav {
-    background-color: 
+  .circle{
+    background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 101201201201;
+    height: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+    background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
+  }
+
+  .logo{
+    z-index: 1;
+    background-image: url("{% static 'logo.jpg' %}")
+  }
+
+  .btn{
+    background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);
+    border: none;
   }
   </style>
   <!-- Custom styles for this template -->
 </head>
 <body>
-    <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">어떡하LAW</a>
-  </nav>
-</header>
+  <header class="nav">
+    <nav>
+      <div class="logo">
+    </div>
+    </nav>
+  </header>
 
 <main role="main">
 
@@ -219,6 +250,7 @@ p, h1, h2 {
         <p class="lead" style="font-size: 1.15rem;"> 이러한 기획의도를 반영하기 위해 사전조사를 실시한 결과, 누구에게나 적용되어야하는 법이 차상위계층과 비법조인 일반인에게 효과적으로 다가가지 못하고 있다는 사실을 알게 되었습니다.  </p>
         <p class="lead" style="font-size: 1.15rem;">  저희는 서비스‘어떡하LAW’를 통해 차상위계층이 경제적 여건에 구애받지 않고 변호사로부터 무료로 법률 상담을 받을 수 있고, 이후 자신이 처한 문제상황을 장기적으로 도와줄 수 있는 공익센터로 인도하고자 합니다.</p>
         <p class="lead" style="font-size: 1.15rem;">또한 누구에게나 적용되는‘법’이 성문화되며 어려운 용어를 가지게 되었다는 점을 들어, 카테고리에 따른 판례와 법령을 제공하고, 해당 법령의 의의 및 어려운 용어의 해설 등을 통해 비법조인들의 법적 이해를 돕는 플랫폼 서비스를 제공하고자 합니다.</p>
+        <p class="lead" style="font-size: 1.15rem;">어떡하LAW의 서비스가 궁금하시다구요? 오른쪽 상단의 NAVBAR를 눌러보세요!</p>
       </div>
     </div>
       <div class="col-md-5">
@@ -241,18 +273,21 @@ p, h1, h2 {
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>프론트엔드 제작자</h2>
+          <div class="juntae picContainer">
+            <div class="juntaepic circle"></div>
+            <p>준태</p>
+          </div>        
+          <h2>프론트엔드 제작자</h2>
         <p>모든걸 감독하였습니다.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-          <div class="mira">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+          <div class="mira picContainer">
+            <div class="mirapic circle"></div>
             <p>미라</p>
           </div>
-          <div class="yuna">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>       
+          <div class="yuna picContainer">
+            <div class="yunapic circle"></div>
             <p>유나</p>
           </div>
         <h2>프론트엔드 제작자</h2>
@@ -260,12 +295,12 @@ p, h1, h2 {
         <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-          <div class="mira">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+          <div class="gangyeon picContainer">
+            <div class="gangyeonpic circle"></div>
             <p>강연</p>
           </div>
-          <div class="yuna">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>       
+          <div class="juno picContainer">
+            <div class="junopic circle"></div>
             <p>준오</p>
           </div>     
         <h2>백엔드 제작자</h2>
@@ -278,8 +313,7 @@ p, h1, h2 {
   </div><!-- /.container -->
 
     <script>
-    
-        $('.detail').hide();
+    </script>
 
   <!-- FOOTER -->
   <footer class="container">
