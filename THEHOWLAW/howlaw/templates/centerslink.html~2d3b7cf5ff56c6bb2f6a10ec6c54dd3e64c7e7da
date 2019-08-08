@@ -12,6 +12,8 @@
     <title>Document</title>
 </head>
 <style>
+
+
 .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle, .btn-outline-secondary:hover {
   color: #6c757d;
   background-color: rgba(0,0,0,0);
