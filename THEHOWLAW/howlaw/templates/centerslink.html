@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}  
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +27,7 @@
         text-align: center; 
         height: 30%;
         padding: 10px;
-        color: white;
+        color: coral;
       }
 
       .sectors{
@@ -106,9 +108,10 @@
       $('.links').hide();
 
       $('.sector').click(function() {
-          $('.links', this).toggle(200);
+          $('.links', this).toggle();
       })  
 
     </script>
   </body>
 </html>
+{% endblock %}

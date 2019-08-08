@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +24,19 @@
             <div class="mypage">마이페이지</div>
          </div>
          <div class="detail">
+<<<<<<< HEAD
+            <div class="sector1">찾기쉬운 생활법령</div>
+            <div class="sector2">쉽게쓰인 판례해설</div>
+            <a href="{% url 'centerslink' %}"><div class="sector1">관련기관 소개</div></a>
+            <a href="{% url 'detail_list' %}"><div class="sector2">상담사례 살펴보기</div></a>
+            <a href="{% url 'about' %}"><div class="sector1">서비스 소개</div></a>
+=======
             <div class="menusector1">찾기쉬운 생활법령</div>
             <div class="menusector2">쉽게쓰인 판례해설</div>
             <div class="menusector1">관련기관 소개</div>
             <div class="menusector2">상담사례 살펴보기</div>
             <div class="menusector1">서비스 소개</div>
+>>>>>>> 2d3b7cf5ff56c6bb2f6a10ec6c54dd3e64c7e7da
             <div class="setting"><i class="fas fa-cog"></i></div>
          </div>
     </div>

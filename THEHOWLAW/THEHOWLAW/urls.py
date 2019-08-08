@@ -32,8 +32,16 @@ urlpatterns = [
     path('mypage_customer/', views.mypage_customer, name='mypage_customer'),
     path('mypage_lawyer/', views.mypage_lawyer, name='mypage_lawyer'),
     path('mypage_school/', views.mypage_school, name='mypage_school'),
+    path('menubar/', views.menubar, name='menubar'),
+    path('centerslink/', views.centerslink, name='centerslink'),
+    path('about/', views.about, name='about'),
+    path('detail_list/', views.detail_list, name='detail_list'),
     path('chatbot_menu/', views.chatbot_menu, name='chatbot_menu'),
     path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
+<<<<<<< HEAD
     path('chat/room/', views.room, name='room'),
     path('about/', views.about, name='about'),
+=======
+    path('index/', views.index, name='index'),
+>>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
 ]

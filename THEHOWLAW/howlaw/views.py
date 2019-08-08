@@ -9,7 +9,13 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import requests
 
+<<<<<<< HEAD
 # Create your views here.
+=======
+def social(request):
+    return render(request,'social.html')
+
+>>>>>>> 94f487ba733b0ce921c4220d6c0c04a220b324d3
 def home(request):
     return render(request, 'home.html')
         
@@ -77,7 +83,9 @@ def delete(request, post_pk):
     return redirect('home')
 
 def mypage_customer(request):
-    return render(request, 'mypage_customer.html')
+    posts = Post.objects.all()
+    totalCnt = Post.objects.filter(name=request.user).count()
+    return render(request, 'mypage_customer.html', { 'totalCnt' : totalCnt })
 
 def mypage_lawyer(request):
     return render(request, 'mypage_lawyer.html')
@@ -87,6 +95,18 @@ def mypage_school(request):
 
 def chatbot_menu(request):
     return render(request, 'chatbot_menu.html')
+
+def menubar(request):
+    return render(request, 'menubar.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def centerslink(request):
+    return render(request, 'centerslink.html')
+
+def detail_list(request):
+    return render(request, 'detail_list.html')
 
 def lawyer_chat(request):
     return render(request, 'room.html')
