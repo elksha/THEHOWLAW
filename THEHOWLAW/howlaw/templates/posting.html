@@ -18,23 +18,17 @@
 <body>
     <div class="main">
         <div class="maintitle">상담글쓰기</div>
+        {% csrf_token %}
         <div class="private">
-            <!-- <select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-            </select> -->
+            
             <div class="btn-group dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Small button
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                    </div>
+                    <div class="droptitle">카테고리</div>
+                    <select style="width: 130px; border-radius: 10px; border:1px solid #ff6f61">
+                        <option value="volvo">선택</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
             </div>
             <div class ="name">
                 <div>이름</div>
@@ -109,6 +103,10 @@
         padding-left: 30px;
         margin-top: 5px;
         margin-bottom: 5px;
+        justify-content: right;
+    }
+    .droptitle{
+        margin-right: 30px;
     }
     .post{
         margin: 0 auto;
