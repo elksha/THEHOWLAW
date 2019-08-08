@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+
 <!-- 회원가입 페이지 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,33 +17,36 @@
         <p>아래의 빈칸을 채워주세요.</p>
         <hr>
 
-        <label for="email"><b>이름</b></label>
-        <input type="text" placeholder="이름" name="email" required>
+        <form method="POST">
+          {% csrf_token %}
+          <label for="email"><b>이름</b></label>
+          <input type="text" name="username" placeholder="username" required>
 
-        <label for="email"><b>이메일 주소</b></label>
-        <input type="text" placeholder="이메일 주소" name="email" required>
-    
-        <label for="psw"><b>비밀번호</b></label>
-        <input type="password" placeholder="비밀번호" name="psw" required>
-    
-        <label for="psw-repeat"><b>비밀번호 확인</b></label>
-        <input type="password" placeholder="비밀번호 확인" name="psw-repeat" required>
+          <label for="email"><b>이메일 주소</b></label>
+          <input type="text" name="email" placeholder="email" required>
+      
+          <label for="psw"><b>비밀번호</b></label>
+          <input type="password" placeholder="password" name="password" required>
+      
+          <label for="psw-repeat"><b>비밀번호 확인</b></label>
+          <input type="password" placeholder="비밀번호 확인" required>
 
-        <label for="psw-repeat"><b>휴대전화 번호</b></label>
-        <input type="text" placeholder="휴대전화 번호" name="psw-repeat" required>
-        
-        <div>
-          <label for="gender"><b>성별</b></label>
-          <div class="gender">
-            남성 <input type="radio" name="gender" value="male" checked />
-            여성 <input type="radio" name="gender" value="female" />
+          <label for="psw-repeat"><b>휴대전화 번호</b></label>
+          <input type="text" placeholder="휴대전화 번호" required>
+          
+          <div>
+            <label for="gender"><b>성별</b></label>
+            <div class="gender">
+              남성 <input type="radio" value="male" checked />
+              여성 <input type="radio" name="gender" value="female" />
+            </div>
           </div>
-        </div>
+
         <br>
         <div>
           <label for="favorite"><b>관심사</b></label>
           <div class="favorite">
-            근로/노동 <input type="checkbox" name="hobby" value="exercise" checked />
+            근로/노동 <input type="checkbox" value="exercise" checked />
             소비자 <input type="checkbox" name="hobby" value="movie" />
             교통/운전 <input type="checkbox" name="hobby" value="music" />
             <br>
@@ -61,13 +67,13 @@
         <br>
         
         <label>
-          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 아이디 저장
+          <input type="checkbox" checked="checked" style="margin-bottom:15px"> 아이디 저장
         </label>
     
         <p>계정 생성은 약관에 동의하는 것으로 간주합니다.<a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
     
         <div class="clearfix">
-          <button type="button" class="cancelbtn">Cancel</button>
+          <a href="{% url 'home' %}"><button type="button" class="cancelbtn">Cancel</button></a>
           <button type="submit" class="signupbtn">Sign Up</button>
         </div>
       </div>
@@ -101,7 +107,7 @@ hr {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background: linear-gradient(-45deg,#2ed397, #2ed39c, #00919d);
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -118,7 +124,7 @@ button:hover {
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
-  background-color: #f44336;
+  background: linear-gradient(-45deg, #FFB37D, #FE9B79, #FF919A);;
 }
 
 /* Float cancel and signup buttons and add an equal width */
@@ -167,3 +173,4 @@ window.onclick = function(event) {
 </script>
 
 </html>
+{% endblock %}
