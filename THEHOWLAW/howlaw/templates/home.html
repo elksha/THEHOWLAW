@@ -47,7 +47,7 @@
                 <div class="sector5"><a href="{% url 'detail_list' %}">상담사례 살펴보기</a></div>
                 <div class="sector4"><a href="{% url 'about' %}">서비스 소개</a></div>
                 {% if user.is_authenticated %}
-                <div class="logout"><i class="fas fa-power-off"></i> 로그아웃</div>
+                <div class="logout"><a href="{% url 'logout' %}"><i class="fas fa-power-off"></i> 로그아웃</a></div>
                 {% endif %}
         </div>
             
