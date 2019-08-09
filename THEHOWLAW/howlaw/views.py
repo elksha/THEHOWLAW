@@ -87,9 +87,6 @@ def mypage_school(request):
 def chatbot_menu(request):
     return render(request, 'chatbot_menu.html')
 
-def menubar(request):
-    return render(request, 'menubar.html')
-
 def about(request):
     return render(request, 'about.html')
 
