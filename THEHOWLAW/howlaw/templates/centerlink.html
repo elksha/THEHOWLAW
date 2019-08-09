@@ -426,10 +426,10 @@
     $(document).ready(function(e){
       $('.carousel').addClass('hidden');
       $('.common').removeClass('hidden');
-
       $('.dropdown-menu').find('a').click(function(e) {
         e.preventDefault();
         var param = $(this).attr("href").replace("#","");
+        var previ = $('.dropdown-toggle').text()
         var concept = $(this).text();
         $('.dropdown-toggle').text(concept);
         $('#search_param').val(param);
@@ -438,38 +438,273 @@
         console.log(text);
         console.log($('.carousel'))
         
-        switch (text) {
-          case "일반":
-            $('.carousel').toggleClass('hidden');
-            $('.common').toggleClass('hidden');
-            break;
-          case "가정법률": 
-            $('.carousel').toggleClass('hidden');
-            $('.home').toggleClass('show');
-            break;
-          case "여성":
-            $('.carousel').toggleClass('hidden');
-            $('.woman').toggleClass('hidden');
-            break;
-          case "이주민":
-            $('.carousel').toggleClass('hidden');
-            $('.immigrants').toggleClass('hidden');
-            break;
-          case "복지소외계층":
-            $('.carousel').toggleClass('hidden');
-            $('.welfare').toggleClass('hidden');
-            break;
-          case "기타": 
-            $('.carousel').toggleClass('hidden');
-            $('.etc').toggleClass('hidden');
-            break;
-          default:
-            console.log({text});
-            break;
+        if (previ!=text) {
+          switch (text) {
+            case "일반":
+                if($('.carousel.common').hasClass('show')) {
+                }
+                if($('.carousel.common').hasClass('hidden')) {
+                    $('.common').toggleClass('hidden');
+                    $('.common').toggleClass('show');
+                    $('.carousel.common').slick('refresh');
+                }
+                if(!$('.carousel.home').hasClass('hidden')) {
+                    $('.carousel.home').toggleClass('hidden');
+                }
+                if(!$('.carousel.woman').hasClass('hidden')) {
+                    $('.carousel.woman').toggleClass('hidden');
+                }
+                if(!$('.carousel.immigrants').hasClass('hidden')) {
+                    $('.carousel.immigrants').toggleClass('hidden');
+                }
+                if(!$('.carousel.welfare').hasClass('hidden')) {
+                    $('.carousel.welfare').toggleClass('hidden');
+                }
+                if(!$('.carousel.etc').hasClass('hidden')) {
+                    $('.carousel.etc').toggleClass('hidden');
+                }
+                if($('.carousel.home').hasClass('show')) {
+                    $('.carousel.home').toggleClass('show');
+                }
+                if($('.carousel.woman').hasClass('show')) {
+                    $('.carousel.woman').toggleClass('show');
+                }
+                if($('.carousel.immigrants').hasClass('show')) {
+                    $('.carousel.immigrants').toggleClass('show');
+                }
+                if($('.carousel.welfare').hasClass('show')) {
+                    $('.carousel.welfare').toggleClass('show');
+                }
+                if($('.carousel.etc').hasClass('show')) {
+                    $('.carousel.etc').toggleClass('show');
+                }
+                if(!$('.carousel.common').hasClass('show')&&!$('.carousel.common').hasClass('hidden')){
+                    $('.carousel.common').toggleClass('show');
+                    $('.carousel.common').slick('refresh');
+                }
+                break;
+            case "가정법률": 
+                if($('.carousel.home').hasClass('show')) {
+                }
+                if($('.carousel.home').hasClass('hidden')) {
+                    $('.home').toggleClass('hidden');
+                    $('.home').toggleClass('show');
+                    $('.carousel.home').slick('refresh');
+                }
+                if(!$('.carousel.common').hasClass('hidden')) {
+                    $('.carousel.common').toggleClass('hidden');
+                }
+                if(!$('.carousel.woman').hasClass('hidden')) {
+                    $('.carousel.woman').toggleClass('hidden');
+                }
+                if(!$('.carousel.immigrants').hasClass('hidden')) {
+                    $('.carousel.immigrants').toggleClass('hidden');
+                }
+                if(!$('.carousel.welfare').hasClass('hidden')) {
+                    $('.carousel.welfare').toggleClass('hidden');
+                }
+                if(!$('.carousel.etc').hasClass('hidden')) {
+                    $('.carousel.etc').toggleClass('hidden');
+                }
+                if($('.carousel.common').hasClass('show')) {
+                    $('.carousel.common').toggleClass('show');
+                }
+                if($('.carousel.woman').hasClass('show')) {
+                    $('.carousel.woman').toggleClass('show');
+                }
+                if($('.carousel.immigrants').hasClass('show')) {
+                    $('.carousel.immigrants').toggleClass('show');
+                }
+                if($('.carousel.welfare').hasClass('show')) {
+                    $('.carousel.welfare').toggleClass('show');
+                }
+                if($('.carousel.etc').hasClass('show')) {
+                    $('.carousel.etc').toggleClass('show');
+                }
+                if(!$('.carousel.home').hasClass('show')&&!$('.carousel.home').hasClass('hidden')){
+                    $('.carousel.home').toggleClass('show');
+                    $('.carousel.home').slick('refresh');
+                }
+                break;
+            case "여성":
+                if($('.carousel.woman').hasClass('show')) {
+                }
+                if($('.carousel.woman').hasClass('hidden')) {
+                    $('.woman').toggleClass('hidden');
+                    $('.woman').toggleClass('show');
+                    $('.carousel.woman').slick('refresh');
+                }
+                if(!$('.carousel.common').hasClass('hidden')) {
+                    $('.carousel.common').toggleClass('hidden');
+                }
+                if(!$('.carousel.home').hasClass('hidden')) {
+                    $('.carousel.home').toggleClass('hidden');
+                }
+                if(!$('.carousel.immigrants').hasClass('hidden')) {
+                    $('.carousel.immigrants').toggleClass('hidden');
+                }
+                if(!$('.carousel.welfare').hasClass('hidden')) {
+                    $('.carousel.welfare').toggleClass('hidden');
+                }
+                if(!$('.carousel.etc').hasClass('hidden')) {
+                    $('.carousel.etc').toggleClass('hidden');
+                }
+                if($('.carousel.common').hasClass('show')) {
+                    $('.carousel.common').toggleClass('show');
+                }
+                if($('.carousel.home').hasClass('show')) {
+                    $('.carousel.home').toggleClass('show');
+                }
+                if($('.carousel.immigrants').hasClass('show')) {
+                    $('.carousel.immigrants').toggleClass('show');
+                }
+                if($('.carousel.welfare').hasClass('show')) {
+                    $('.carousel.welfare').toggleClass('show');
+                }
+                if($('.carousel.etc').hasClass('show')) {
+                    $('.carousel.etc').toggleClass('show');
+                }
+                if(!$('.carousel.woman').hasClass('show')&&!$('.carousel.woman').hasClass('hidden')){
+                    $('.carousel.woman').toggleClass('show');
+                    $('.carousel.woman').slick('refresh');
+                }
+                break;
+            case "이주민":
+                if($('.carousel.immigrants').hasClass('show')) {
+                }
+                if($('.carousel.immigrants').hasClass('hidden')) {
+                    $('.immigrants').toggleClass('hidden');
+                    $('.immigrants').toggleClass('show');
+                    $('.carousel.immigrants').slick('refresh');
+                }
+                if(!$('.carousel.common').hasClass('hidden')) {
+                    $('.carousel.common').toggleClass('hidden');
+                }
+                if(!$('.carousel.home').hasClass('hidden')) {
+                    $('.carousel.home').toggleClass('hidden');
+                }
+                if(!$('.carousel.woman').hasClass('hidden')) {
+                    $('.carousel.woman').toggleClass('hidden');
+                }
+                if(!$('.carousel.welfare').hasClass('hidden')) {
+                    $('.carousel.welfare').toggleClass('hidden');
+                }
+                if(!$('.carousel.etc').hasClass('hidden')) {
+                    $('.carousel.etc').toggleClass('hidden');
+                }
+                if($('.carousel.common').hasClass('show')) {
+                    $('.carousel.common').toggleClass('show');
+                }
+                if($('.carousel.home').hasClass('show')) {
+                    $('.carousel.home').toggleClass('show');
+                }
+                if($('.carousel.woman').hasClass('show')) {
+                    $('.carousel.woman').toggleClass('show');
+                }
+                if($('.carousel.welfare').hasClass('show')) {
+                    $('.carousel.welfare').toggleClass('show');
+                }
+                if($('.carousel.etc').hasClass('show')) {
+                    $('.carousel.etc').toggleClass('show');
+                }
+                if(!$('.carousel.immigrants').hasClass('show')&&!$('.carousel.immigrants').hasClass('hidden')){
+                    $('.carousel.immigrants').toggleClass('show');
+                    $('.carousel.immigrants').slick('refresh');
+                }
+                break;
+            case "복지소외계층":
+                if($('.carousel.welfare').hasClass('show')) {
+                }
+                if($('.carousel.welfare').hasClass('hidden')) {
+                    $('.welfare').toggleClass('hidden');
+                    $('.welfare').toggleClass('show');
+                    $('.carousel.welfare').slick('refresh');
+                }
+                if(!$('.carousel.common').hasClass('hidden')) {
+                    $('.carousel.common').toggleClass('hidden');
+                }
+                if(!$('.carousel.home').hasClass('hidden')) {
+                    $('.carousel.home').toggleClass('hidden');
+                }
+                if(!$('.carousel.woman').hasClass('hidden')) {
+                    $('.carousel.woman').toggleClass('hidden');
+                }
+                if(!$('.carousel.immigrants').hasClass('hidden')) {
+                    $('.carousel.immigrants').toggleClass('hidden');
+                }
+                if(!$('.carousel.etc').hasClass('hidden')) {
+                    $('.carousel.etc').toggleClass('hidden');
+                }
+                if($('.carousel.common').hasClass('show')) {
+                    $('.carousel.common').toggleClass('show');
+                }
+                if($('.carousel.home').hasClass('show')) {
+                    $('.carousel.home').toggleClass('show');
+                }
+                if($('.carousel.woman').hasClass('show')) {
+                    $('.carousel.woman').toggleClass('show');
+                }
+                if($('.carousel.immigrants').hasClass('show')) {
+                    $('.carousel.immigrants').toggleClass('show');
+                }
+                if($('.carousel.etc').hasClass('show')) {
+                    $('.carousel.etc').toggleClass('show');
+                }
+                if(!$('.carousel.welfare').hasClass('show')&&!$('.carousel.welfare').hasClass('hidden')){
+                    $('.carousel.welfare').toggleClass('show');
+                    $('.carousel.welfare').slick('refresh');
+                }
+                break;
+            case "기타": 
+                if($('.carousel.etc').hasClass('show')) {
+                }
+                if($('.carousel.etc').hasClass('hidden')) {
+                    $('.etc').toggleClass('hidden');
+                    $('.etc').toggleClass('show');
+                    $('.carousel.etc').slick('refresh');
+                }
+                if(!$('.carousel.common').hasClass('hidden')) {
+                    $('.carousel.common').toggleClass('hidden');
+                }
+                if(!$('.carousel.home').hasClass('hidden')) {
+                    $('.carousel.home').toggleClass('hidden');
+                }
+                if(!$('.carousel.woman').hasClass('hidden')) {
+                    $('.carousel.woman').toggleClass('hidden');
+                }
+                if(!$('.carousel.immigrants').hasClass('hidden')) {
+                    $('.carousel.immigrants').toggleClass('hidden');
+                }
+                if(!$('.carousel.welfare').hasClass('hidden')) {
+                    $('.carousel.welfare').toggleClass('hidden');
+                }
+                if($('.carousel.common').hasClass('show')) {
+                    $('.carousel.common').toggleClass('show');
+                }
+                if($('.carousel.home').hasClass('show')) {
+                    $('.carousel.home').toggleClass('show');
+                }
+                if($('.carousel.woman').hasClass('show')) {
+                    $('.carousel.woman').toggleClass('show');
+                }
+                if($('.carousel.immigrants').hasClass('show')) {
+                    $('.carousel.immigrants').toggleClass('show');
+                }
+                if($('.carousel.welfare').hasClass('show')) {
+                    $('.carousel.welfare').toggleClass('show');
+                }
+                if(!$('.carousel.etc').hasClass('show')&&!$('.carousel.etc').hasClass('hidden')){
+                    $('.carousel.etc').toggleClass('show');
+                    $('.carousel.etc').slick('refresh');
+                }
+                break;
+            default:
+                console.log({text});
+                break;
           }
+        }
       });
     });
-
       
 
 
