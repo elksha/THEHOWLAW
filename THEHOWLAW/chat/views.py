@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 import json
 
 def index(request):
+    print(request.user)
     return render(request, 'chat/index.html', {})
 
 def room(request, room_name):
