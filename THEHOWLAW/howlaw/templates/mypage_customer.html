@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!-- <마이페이지 for 사용자 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>마이 페이지</title>
     <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script
@@ -97,12 +97,14 @@
     <div class='mypage main'>
       <div class='mypage sectors'>
         <div class = "title">마이페이지</div>
-        <img src="user.png" width="70px" height="70px">
+        <img src="{% static "user.png" %}" width="70px" height="70px">
         <div class="userid">
           {{ user.username }}님,<br>안녕하세요
         </div>
         <div class="private">
+          <a href="{% url 'centerslink' %}">
             개인정보수정
+          </a>
           </div>
         <div class="contents">
           <div class= "content1">
