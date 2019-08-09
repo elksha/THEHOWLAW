@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^chat/', include('chat.urls'), name='chat'),
     url(r'^admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('new/', views.new, name='new'),
+    path('posting/', views.posting, name='posting'),
     path('detail/<int:post_pk>/', views.detail, name='detail'),
     path('edit/<int:post_pk>/', views.edit, name = 'edit'),
     path('delete/<int:post_pk>/', views.delete, name = 'delete'),
@@ -38,5 +38,4 @@ urlpatterns = [
     path('detail_list/', views.detail_list, name='detail_list'),
     path('chatbot_menu/', views.chatbot_menu, name='chatbot_menu'),
     path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
-    path('index/', views.index, name='index'),
 ]

@@ -17,44 +17,46 @@
 </head>
 <body>
     <div class="main">
+    <form method="POST" enctype='multipart/form-data'>
         <div class="maintitle">상담글쓰기</div>
         {% csrf_token %}
-        <div class="private">
-            
-            <div class="btn-group dropdown">
-                    <div class="droptitle">카테고리</div>
-                    <select style="width: 130px; border-radius: 10px; border:1px solid #ff6f61">
-                        <option value="volvo">선택</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
-            </div>
-            <div class ="name">
-                <div>이름</div>
-                <div><input type="text" style="width: 220px; border-radius:50px; border:1px solid #ff6f61"></div>
-            </div>
-            <div class ="pwd">
-                <div>비밀번호</div>
-                <div><input type="password" style="width: 220px; border-radius:50px; border:1px solid #ff6f61"></div>
-            </div>
-            <div class ="title">
-                    <div>제목</div>
-                    <div><input type="text" style="width: 220px; border-radius:50px; border:1px solid #ff6f61"></div>
-            </div>
+            <div class="private">
+                <form method="POST" enctype='multipart/form-data'>
+                <div class="btn-group dropdown">
+                        <div class="droptitle">카테고리</div>
+                        <select style="width: 130px; border-radius: 10px; border:1px solid #ff6f61">
+                            <option value="volvo">선택</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                </div>
+                <div class ="name">
+                    <div>이름</div>
+                    <div><input type="text" style="width: 220px; border-radius:50px; border:1px solid #ff6f61" name="title"></div>
+                </div>
+                <div class ="pwd">
+                    <div>비밀번호</div>
+                    <div><input type="password" name="pwd" style="width: 220px; border-radius:50px; border:1px solid #ff6f61"></div>
+                </div>
+                <div class ="title">
+                        <div>제목</div>
+                        <div><input type="text" style="width: 220px; border-radius:50px; border:1px solid #ff6f61"></div>
+                </div>
 
-        </div>
-        <div class="post">
-            <textarea name ="post" cols="37" rows="10" style="border-radius:5px; border:1px solid #ff6f61"></textarea> 
-        </div>
-        <div class="function">
-            <div><i class="fas fa-camera"></i></div>
-        </div>
-        <div class="buttons">
-            <button type="button" class="btn btn-danger">삭제하기</button>
-            <button type="button" class="btn btn-danger">임시저장</button>
-            <button type="button" class="btn btn-danger">보내기</button>
-        </div>
+            </div>
+            <div class="post">
+                <textarea name ="post" cols="37" rows="10" style="border-radius:5px; border:1px solid #ff6f61"></textarea> 
+            </div>
+            <div class="function">
+                <div><i class="fas fa-camera"><input type="file" name="img"></i></div>
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn btn-danger">삭제하기</button>
+                <button type="button" class="btn btn-danger">임시저장</button>
+                <button type="button" class="btn btn-danger">보내기</button>
+            </div>
+        </form>
     </div>
 </body>
 

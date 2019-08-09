@@ -1,117 +1,418 @@
-{% extends "base.html" %}
-{% block content %}  
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <link href="instyle.css" rel="stylesheet">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
-    <script
-  src="http://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <style>
-      .main{
-        background-color: coral;
-      }
+</head>
+<style>
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle, .btn-outline-secondary:hover {
+  color: #6c757d;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+  border-right-color: lightgray;
+  border-radius: 0;
+}
+.btn-outline-secondary {
+  border-color: rgba(0,0,0,0);
+  border-right-color: lightgray;
+  border-radius: 0;
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-secondary.dropdown-toggle:focus, .btn:focus {
+  box-shadow: 0 0 0 0;
+}
 
-      .together{ 
-        background-position: center;
-        background-size: cover;
-        font-size: 30px;
-        text-align: center; 
-        height: 30%;
-        padding: 10px;
-        color: coral;
-      }
 
-      .sectors{
-        display: inline;
-        margin: 10px 0px;
-        width: 80%;
-      }
-
-      .sector{
-        border: 1px solid coral;
-        border-radius: 20px;
-        background-color: white;
-        text-align: center;
-        color: white;
-        margin: 0px 30px 50px 30px;
-        padding: 20px;
-
-        box-shadow: 5px 5px 5px grey;
-      }
-
-      .links{
-        border: 1px solid coral;
-        background-color: coral;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        text-align: center;
-        padding: 10px;
-      }
-
-      h5 {
-        color: coral;
-      }
-
-    </style>
-    <div class='centers main'>
-      <div class='centers together'>
-        <h2>공익센터 집합소</h2>
-      </div>
-      <div class='centers sectors'>
-        <div class='centers sector'>
-          <h5>여성인권</h5>
-          <div class='centers links'>
-            <a href="http://www.help0365.or.kr/">해바라기 센터</a>
+</style>
+<body>
+    <div><i class="fas fa-chevron-left fa-2x" style="padding: 1rem; padding-top: 0.7rem; padding-bottom: 0.7rem; color: #FFFFFF"></i></div>
+    <h4 class="text-white" style="padding: 2rem; padding-top: 0.5rem; padding-bottom: 0rem;">내게맞는</br> 공익센터</h5>
+    <div class="p-5" style="padding: 1rem!important; padding-bottom: 0rem!important;">
+            <form action="">
+                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style="margin-bottom: 1rem!important;">
+                    <div class="input-group" style="justify-content: center">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none">일반</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">일반</a>
+                          <a class="dropdown-item" href="#">가정법률</a>
+                          <a class="dropdown-item" href="#">여성</a>
+                          <a class="dropdown-item" href="#">이주민</a>
+                          <a class="dropdown-item" href="#">복지소외계층</a>
+                          <a class="dropdown-item" href="#">기타</a>
+                          <!-- <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a> -->
+                        </div>
+                    <!-- <input type="hidden" name="search_param" value="all" id="search_param"> -->
+                    <!-- <input type="search" placeholder="검색해보세요" aria-describedby="button-addon2" class="form-control border-0 bg-light"> -->
+                    <!-- <div class="input-group-prepend">
+                        <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>                 
+                    </div> -->
+                  </div>
+                </div>
+            </form>
           </div>
-        </div>
 
-        <div class='centers sector'>
-          <h5>장애인권</h5>
-          <div class='centers links'>
-            <a href="http://kmdpcil.com/">한국정신장애인 자립생활센터</a>
-          </div>
-        </div>
+    <div class="carousel common">
+        <!-- first 공익일반 -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">대한법률구조공단</h1>
+      
+                <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                <div class="" style="height: 25vh, overflow-y: scroll," >
+                <ul class="list-unstyled my-5 text-small text-left">
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 전국민</li>
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 법을 잘 모르는 사회·경제적 약자들이 공단의 지원을 받아 억울함을 해소함으로써 정의를 실현하는것을 사명으로 설립된 인권 옹호 및 법률 복지 기관입니다. 법률구조, 전화, 사이버, 방문상담, 법률구조를 제공합니다.</li>
+                </ul>
+                </div>
+                <a href="https://www.klac.or.kr/" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+              </div>
+            </div>
 
-        <div class='centers sector'>
-          <h5>이주민 인권</h5>
-          <div class='centers links'>
-          </div>
-        </div>
+            <!-- second -->
+            <div class="col-lg-4 mb-7 mb-lg-0">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">서울특별시 법무행정서비스</h1>
+            
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 서울시민</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i>서울시에서는 민사, 가사, 행정, 형사 등 시민생활과 밀접한 분야의 법률상담서비스를 제공하고 있습니다. 법률문제가 있는 시민들은 서울시마을변호사, 사이버법률상담 등의 제도를 통해서 무료로 자유롭게 상담받을 수 있습니다. </li>
+                      </ul>
+                      <a href="https://legal.seoul.go.kr/legal/front/page/counsel.html?pAct=main" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                </div>
+            </div>
 
-        <div class='centers sector'>
-          <h5>빈곤과 복지</h5>
-          <div class='centers links'>
-            <a href="https://swlc.welfare.seoul.kr/swlc/index.action/">서울사회복지공익법센터</a>
-          </div>
-        </div>
+            <!-- third -->
+            <div class="col-lg-4">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">대한변협법률구조재단</h1>
 
-        <div class='centers sector'>
-          <h5>그 외</h5>
-          <div class='centers links'>
-            <a href="https://humanrights.korea.ac.kr/hrc/index.do/">고려대학교 인권센터</a>
-          </div>
-        </div>
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 사회소외계층, 다문화가정 및 이주외국인, 북한이탈주민, 국제법상 난민, 성폭력피해자, 한부모가정 등.</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 법률지식이 부족하거나 경제적 어려움으로 법의 보호를 충분히 받지 못하는 사람들을 돕기 위해 민사, 형사, 가사, 행정, 헌법소원 등 법률구조가 필요한 모든 사건에 대해 법률구조를 진행하고 있습니다.</li>
+                      </ul>
+                      <a href="http://www.legalaid.or.kr/main/main.php" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                        
+
+
+      <div class="carousel home">
+        <!-- first 가정법률-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">법률구조법인 한국가정법률상담소</h1>
+      
+                <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                <div style="height: 25vh">
+                <ul class="list-unstyled my-5 text-small text-left">
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 국민, 외국인</li>
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 경제적으로 어렵거나 법을 모르기 때문에 어려움을 겪고 있는 모든 이웃의 편이 되어 그들에게 <strong>양질의 법률서비스를 무료로 제공해 주는 법률구조기관</strong>입니다. 가정 내에서의 남녀평등·부부평등을 통해 민주적이고 건강한 가정을 구현하는데 최선의 노력을 기울이고 있습니다. 면접상담과 전화, 지상, 순회, 인터넷, 출장, 영어상담 등 다양한 창구가 마련되어 있습니다. </li>
+                </ul>
+                </div>
+                <a href="http://lawhome.or.kr/newhome/index.asp" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+              </div>
+            </div>
+
+            <!-- second -->
+            <div class="col-lg-4 mb-7 mb-lg-0">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">성남가정법률상담소</h1>
+            
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 성남시민</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 평일은 전문법률상담원이 가정법률문제 전반에 관하여 가족법상담을 하고 있으며, 매주 월요일 오후, 본상담소의 무료법률상담 자원변호인단이 민사, 형사사건 등 법률문제 전반에 대하여 무료로 법률상담을 실시하고 있습니다. 상담방법은 면접,인터넷,출장,전화상담 등 다양한 상담창구가 개설되어 있으며 전화상담 신청자의 과다와 문제의 특성상 상담자와 직접 면접상담을 하도록 권하고 있습니다. </li>
+                      </ul>
+                      <a href="https://legal.seoul.go.kr/legal/front/page/counsel.html?pAct=main" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                </div>
+            </div>
+
+            <!-- third -->
+            <div class="col-lg-4">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">No</h1>
+
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> No</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> No</li>
+                      </ul>
+                      <button id="mob" type="button" class="btn btn-primary btn-block p-2 shadow rounded-pill" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                      </button>
         
-      </div>
-    </div>
-    <script >
-    
-      $('.links').hide();
+        
+        
+        <div class="carousel woman">
+        <!-- first 여성 -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">해바라기 센터</h1>
+      
+                <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                <div style="height: 25vh">
+                <ul class="list-unstyled my-5 text-small text-left">
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 성폭력·가정폭력·성매매피해자 및 그 가족</li>
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 해바라기센터는 성폭력·가정폭력·성매매피해자 및 그 가족에 대하여 상담, 의료, 법률, 수사, 심리치료 지원서비스를 통합적으로 제공하는 기관입니다.</li>
+                </ul>
+                </div>
+                <a href="http://www.mogef.go.kr/cs/wvs/cs_wvs_f005.do" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+              </div>
+            </div>
 
-      $('.sector').click(function() {
-          $('.links', this).toggle();
-      })  
+            <!-- second -->
+            <div class="col-lg-4 mb-7 mb-lg-0">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">한국여성의 전화</h1>
+            
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 여성폭력문제피해자</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 매주 월요일 한국여성의전화 사무실에서 무료법률상담을 받으실 수 있습니다. 법률상담은 변호사 상담으로 면접상담 후에 법률상담을 예약하실 수 있습니다. 상담은 25분으로 미리 질문사항을 정리해오시면 도움이 됩니다. </li>
+                      </ul>
+                      <a href= "http://hotline.or.kr/counsel_info" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                </div>
+            </div>
 
-    </script>
-  </body>
+            <!-- third -->
+            <div class="col-lg-4">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">DNE</h1>
+
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 사회소외계층, 다문화가정 및 이주외국인, 북한이탈주민, 국제법상 난민, 성폭력피해자, 한부모가정 등.</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 법률지식이 부족하거나 경제적 어려움으로 법의 보호를 충분히 받지 못하는 사람들을 돕기 위해 민사, 형사, 가사, 행정, 헌법소원 등 법률구조가 필요한 모든 사건에 대해 법률구조를 진행하고 있습니다.</li>
+                      </ul>
+                      <button id="mob" type="button" class="btn btn-primary btn-block p-2 shadow rounded-pill" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                      </button>
+
+
+
+          <div class="carousel immigrants">
+        <!-- first 이주민 -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">이주민센터 친구</h1>
+      
+                <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                <div style="height: 25vh">
+                <ul class="list-unstyled my-5 text-small text-left">
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 이주노동자, 혼인이주여성, 재한동포 등 이주민</li>
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 인권 침해를 당하거나 법적인 문제 해결이 필요한 이주노동자, 혼인이주여성, 재한동포 등 이주민들에게 인권ㆍ법률 상담을 제공합니다. 법학전문대학원 자원봉사자들과 ‘친구 자문변호사’ 들이 매주 일요일 10시~2시 라파엘센터에서 무료법률상담을 하고 있습니다. 필요한 사건의 경우 소송구조를 진행할 수도 있습니다.</li>
+                </ul>
+                </div>
+                <a href="http://chingune.or.kr/bbs/board.php?bo_table=B11" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+              </div>
+            </div>
+
+            <!-- second -->
+            <div class="col-lg-4 mb-7 mb-lg-0">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">이주외국인법률지원센터</h1>
+            
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 이주외국인</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 대한변호사협회와 대한변협인권재단에서 결혼이주여성의 인권을 보호하고 다문화가정이 우리나라에 건강하게 자리잡을 수 있도록 개설한 다문화가정법률지원센터입니다. 본 사이트를 통해서 결혼이주여성들이 자국어(영어, 중국어, 일본어, 필리핀어, 베트남어, 태국어, 캄보디아어, 우즈베키스탄어, 몽골어, 러시아어)로 편리하게 변호사에게 상담을 받을 수 있게 지원합니다. </li>
+                      </ul>
+                      <a href="http://migrantlaw.or.kr/default.asp" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                </div>
+            </div>
+
+            <!-- third -->
+            <div class="col-lg-4">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">DNE</h1>
+
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 사회소외계층, 다문화가정 및 이주외국인, 북한이탈주민, 국제법상 난민, 성폭력피해자, 한부모가정 등.</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 법률지식이 부족하거나 경제적 어려움으로 법의 보호를 충분히 받지 못하는 사람들을 돕기 위해 민사, 형사, 가사, 행정, 헌법소원 등 법률구조가 필요한 모든 사건에 대해 법률구조를 진행하고 있습니다.</li>
+                      </ul>
+                      <button id="mob" type="button" class="btn btn-primary btn-block p-2 shadow rounded-pill" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                      </button>
+
+
+
+          <div class="carousel welfare">
+        <!-- first 복지소외계층 -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">서울사회복지공익법센터</h1>
+      
+                <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                <div style="height: 25vh">
+                <ul class="list-unstyled my-5 text-small text-left">
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 복지소외계층</li>
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 복지소외계층 시민 여러분의 권리행사를 돕고, 다양하고 실질적인 법률구제의 토대를 만들어가고자 서울시복지재단 내에 설립된 기관입니다.</li>
+                </ul>
+                </div>
+                <a href="https://swlc.welfare.seoul.kr/swlc/html/sub/index.action?pno=060101" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+              </div>
+            </div>
+
+            <!-- second -->
+            <div class="col-lg-4 mb-7 mb-lg-0">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">DNE</h1>
+            
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 서울시민</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i>서울시에서는 민사, 가사, 행정, 형사 등 시민생활과 밀접한 분야의 법률상담서비스를 제공하고 있습니다. 법률문제가 있는 시민들은 서울시마을변호사, 사이버법률상담 등의 제도를 통해서 무료로 자유롭게 상담받을 수 있습니다. </li>
+                      </ul>
+                      <a href="https://legal.seoul.go.kr/legal/front/page/counsel.html?pAct=main" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                </div>
+            </div>
+
+            <!-- third -->
+            <div class="col-lg-4">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">DNE</h1>
+
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 사회소외계층, 다문화가정 및 이주외국인, 북한이탈주민, 국제법상 난민, 성폭력피해자, 한부모가정 등.</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 법률지식이 부족하거나 경제적 어려움으로 법의 보호를 충분히 받지 못하는 사람들을 돕기 위해 민사, 형사, 가사, 행정, 헌법소원 등 법률구조가 필요한 모든 사건에 대해 법률구조를 진행하고 있습니다.</li>
+                      </ul>
+                      <button id="mob" type="button" class="btn btn-primary btn-block p-2 shadow rounded-pill" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                      </button>
+
+
+
+          <div class="carousel etc">
+        <!-- first 기타-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">고려대학교 법학전문대학원 공익법률상담소(CLEC)</h1>
+      
+                <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                <div style="height: 25vh">
+                <ul class="list-unstyled my-5 text-small text-left">
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 전국민</li>
+                  <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> 법학전문대학원 학생들에게 실무교육 및 공익활동의 기회를 제공하기 위하여 설립되었습니다.  지역주민을 위한 법률상담 및 소송지원, 사회적 약자의 권익증진을 위한 활동 등을 통해 공익을 실현하고 지역사회 발전에 이바지함을 목표로 하고 있습니다. 법률 문제의 최종적인 결정을 하는 경우 반드시 변호사의 조력을 받으십시오.</li>
+                </ul>
+                </div>
+                <a href="http://clec.co.kr/" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+              </div>
+            </div>
+
+            <!-- second -->
+            <div class="col-lg-4 mb-7 mb-lg-0">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">연세대학교 공익법률지원센터</h1>
+            
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 지역사회 주민, 사회경제적 약자 등 다수</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 연세대 법학전문대학원 학생들이 교육과정에서 배운 지식을 바탕으로 실제사건을 처리하는 능력을 배양하는 교육기관으로, 경제적·사회적 약자 및 지역사회에 대한 다방면의 법률지원 등을 통해 사회적 책임을 다하는 것을 이념으로 하고 있습니다.  본 센터의 법률구조범위는 법률상담까지이며, 소송대리는 하지 않습니다.</li>
+                      </ul>
+                      <a href="http://legalclinic.yonsei.ac.kr/legalclinic/index.do" class="btn btn-primary btn-block p-2 shadow rounded-pill">바로가기</a>
+                </div>
+            </div>
+
+            <!-- third -->
+            <div class="col-lg-4">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">DNE</h1>
+
+                      <div class="custom-separator my-4 mx-auto bg-primary"></div>
+                      <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 지원대상: 사회소외계층, 다문화가정 및 이주외국인, 북한이탈주민, 국제법상 난민, 성폭력피해자, 한부모가정 등.</li>
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i> 법률지식이 부족하거나 경제적 어려움으로 법의 보호를 충분히 받지 못하는 사람들을 돕기 위해 민사, 형사, 가사, 행정, 헌법소원 등 법률구조가 필요한 모든 사건에 대해 법률구조를 진행하고 있습니다.</li>
+                      </ul>
+                      <button id="mob" type="button" class="btn btn-primary btn-block p-2 shadow rounded-pill" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                      </button>
+                </div>
+            </div>
+
+        </div>
+      
+</body>
+<script src="https://kit.fontawesome.com/d3425aa9bd.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.carousel').slick({
+        slidesToShow: 1,
+        dots: true,
+        centerMode: true,
+        nextArrow: null,
+        });
+        $('#exampleModal').on('shown.bs.modal', function (e) {
+          $('.specar').resize();
+          $('.specar2').resize();
+        });
+        $('.specar').slick({
+          nextArrow: null,
+          prevArrow: null,
+          slidestoShow: 1,
+          dots: true,
+        });
+        $('.specar2').slick({
+          nextArrow: null,
+          prevArrow: null,
+          slidestoShow: 1,
+        });
+    });
+    $(document).ready(function(e){
+      $('.dropdown-menu').find('a').click(function(e) {
+        e.preventDefault();
+        var param = $(this).attr("href").replace("#","");
+        var concept = $(this).text();
+        $('.dropdown-toggle').text(concept);
+        $('#search_param').val(param);
+	    });
+    });
+</script>
 </html>
-{% endblock %}

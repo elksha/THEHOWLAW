@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-from django.shortcuts import render
-
-# Create your views here.
-=======
 from django.shortcuts import render, redirect
 from .forms import PostForm, CommentForm, LogInForm, UserForm, SignUpForm
 from .models import Post, Comment
@@ -11,9 +6,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import requests
 
-def social(request):
-    return render(request,'social.html')
-
+# Create your views here.
 def home(request):
     return render(request, 'home.html')
         
@@ -33,7 +26,7 @@ def signup(request):
         return render(request, 'registration/signup.html', {'form': form})
 
 @login_required
-def new(request):
+def posting(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         post = form.save(commit=False)
@@ -45,7 +38,7 @@ def new(request):
     else:
         form = PostForm()
         
-        return render(request, 'new.html', { 'form' : form })
+        return render(request, 'posting.html', { 'form' : form })
 
 def detail(request, post_pk):
     if request.method == 'POST':
@@ -107,4 +100,4 @@ def detail_list(request):
     return render(request, 'detail_list.html')
 
 def lawyer_chat(request):
-    return render(request, 'room.html')
+    return render(request, 'lawyerchat.html')

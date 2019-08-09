@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,33 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="/static/js/bootstrap.css" rel="stylesheet" />
+    <link href="/static/js/4.3bootstrap.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script
         src="http://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
     <div class="mainbody">
 <!-- 홈메인 -->
     <div class="hometop">
-        <!-- 검색 -->
-        <div class="input-group mb-3 search">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
-            </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <!-- 올라가는 페이지 -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+            <nav class="bg-white p-5 rounded-lg shadow nav">
+            뭐 페이지를 여기 넣으세용~
+            <p>올라간다~</p>
+            </nav>
         </div>
         <!-- 메뉴바 -->
         <div id="mySidenav" class="sidenav">
@@ -74,13 +68,26 @@
         </div>
 
     </div>
+    <!-- 검색 -->
+    <div class="mx-2 p-1 bg-light rounded rounded-pill shadow-sm mb-4" style="margin-bottom: 1rem!important;">
+            <div class="input-group">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            <input type="hidden" name="search_param" value="all" id="search_param">
+            <input style="z-index: 0;" type="search" placeholder="검색해보세요" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+            <div class="input-group-prepend">
+                <button style="z-index: 0;" id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>                 
+            </div>
+            </div>
+    </div>
     <!-- 홈메인 -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
-    <!-- 1-2.메뉴아이콘 -->
-    <a href="{% url 'menubar' %}"><i class="fas fa-bars menu"></i></a>
-    
-    <!-- 1-3.챗봇아이콘 -->
-    <!-- <a href="{% url 'chatbot_menu' %}"><i class="far fa-comment-dots chat"></i></a> -->
     
         <!--페이지-->
         <ol class="carousel-indicators">
@@ -112,7 +119,8 @@
         <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
         <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
     </div>
-    <div class="write">상담글쓰기 <i class="fas fa-chevron-up"></i></div>
+    <!-- 검색 -->
+    <div class="write ssm-toggle-nav">상담글쓰기 <i class="fas fa-chevron-up"></i></div>
 </div>
 </body>
 
@@ -157,12 +165,12 @@ html{
     width: 100%;
     height: 150px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 15px;
     text-align: center;
 }
 .username{
     margin-top:7px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .mypage{
     margin-top: 5px;
@@ -178,7 +186,7 @@ html{
     padding-bottom: 10px;
     text-align: left;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1rem;
 }
 
 .sector5{
@@ -186,7 +194,7 @@ html{
     padding-right:7px;
     text-align: left;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1rem;
 }
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -258,7 +266,7 @@ html{
     margin-top: 70px;
     margin-right:20px;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 
@@ -323,8 +331,52 @@ html{
     bottom: 20px;
     font-family: 'Noto Sans KR', sans-serif;
 }
-</style>
 
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle, .btn-outline-secondary:hover {
+    color: #6c757d;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    border-right-color: lightgray;
+    border-radius: 0;
+}
+.btn-outline-secondary {
+    border-color: rgba(0,0,0,0);
+    border-right-color: lightgray;
+    border-radius: 0;
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-secondary.dropdown-toggle:focus, .btn:focus {
+    box-shadow: 0 0 0 0;
+}
+
+nav {
+    height: 98%;
+    width: 95%;
+    background-color: #0a4a3c;
+    left: 2.5%;
+    top: 2%;
+    z-index: 2;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: visible;
+    transform: translate(0,100%);
+}
+.ssm-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1;
+}
+</style>
+<script src="https://kit.fontawesome.com/d3425aa9bd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script src="js/jquery.slideandswipe.js"></script>
 <script type="text/javascript">
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
@@ -342,7 +394,15 @@ function closeNav() {
 }
 
 // 검색
-
+$(document).ready(function(e){
+      $('.dropdown-menu').find('a').click(function(e) {
+        e.preventDefault();
+        var param = $(this).attr("href").replace("#","");
+        var concept = $(this).text();
+        $('.dropdown-toggle').text(concept);
+        $('#search_param').val(param);
+	    });
+    });
 
 // 챗봇메뉴
     $('.chatmenu').hide();
@@ -357,6 +417,11 @@ function closeNav() {
 // function openChat() {
 //     $('.chatmenu').toggle(200);
 // }
+
+
+$(document).ready(function() {
+                $('.nav').slideAndSwipe();
+            });
 
 </script>
 </html>
