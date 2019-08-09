@@ -56,15 +56,15 @@
         <!-- first -->
             <div class="col-lg-4 mb-5 mb-lg-0">
               <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
-                <h1 class="h6 text-uppercase font-weight-bold mb-4">Basic</h1>
+                <h1 class="h6 text-uppercase font-weight-bold mb-4">{{query}} - {{law_list.0.num}}</h1>
       
                 <div class="custom-separator my-4 mx-auto bg-primary"></div>
                 <div style="height: 25vh">
                 <ul class="list-unstyled my-5 text-small text-left">
                   <li class="mb-3">
-                    <i class="fa fa-check mr-2 text-primary"></i> Lorem ipsum dolor sit amet</li>
-                  <li class="mb-3">
-                    <i class="fa fa-check mr-2 text-primary"></i> Sed ut perspiciatis</li>
+                    <i class="fa fa-check mr-2 text-primary"></i>{{law_list.0.content}}</li>
+                  <!-- <li class="mb-3">
+                    <i class="fa fa-check mr-2 text-primary"></i> Sed ut perspiciatis</li> -->
                 </ul>
                 </div>
                 <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
@@ -74,14 +74,12 @@
             <!-- second -->
             <div class="col-lg-4 mb-7 mb-lg-0">
                 <div class="bg-white p-5 rounded-lg shadow" style="height: 60vh;">
-                      <h1 class="h6 text-uppercase font-weight-bold mb-4">Pro</h1>
+                      <h1 class="h6 text-uppercase font-weight-bold mb-4">{{query}} - {{law_list.1.num}}</h1>
             
                       <div class="custom-separator my-4 mx-auto bg-primary"></div>
                       <ul class="list-unstyled my-5 text-small text-left font-weight-normal">
                         <li class="mb-3">
-                          <i class="fa fa-check mr-2 text-primary"></i> Lorem ipsum dolor sit amet</li>
-                        <li class="mb-3">
-                          <i class="fa fa-check mr-2 text-primary"></i> Sed ut perspiciatis</li>
+                          <i class="fa fa-check mr-2 text-primary"></i> {{query}} - {{law_list.1.content}}</li>
                       </ul>
                       <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
                 </div>
