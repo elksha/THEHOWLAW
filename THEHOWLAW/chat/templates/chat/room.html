@@ -12,10 +12,9 @@
       src="http://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"
-    ></script> 
-
+    ></script>
   </head>
-  
+
   <body>
     <style type="text/css">
       html, body {
@@ -122,28 +121,32 @@
 
     </style>
 
- <div class="lawyerchat body">
-    <div class="lawyerchat upper">
-      <div class="lawyerchat horizontal">
-        <i class="fas fa-grip-lines"></i>
+    <div class="lawyerchat body">
+      <div class="lawyerchat upper">
+        <div class="lawyerchat horizontal">
+          <i class="fas fa-grip-lines"></i>
+        </div>
+        <div class="lawyerchat helpandX">
+          <i class="far fa-question-circle"></i>
+          <i class="fas fa-times"></i>
+        </div>
       </div>
-      <div class="lawyerchat helpandX">
-        <i class="far fa-question-circle"></i>
-        <i class="fas fa-times"></i>
+      <div class="lawyerchat main">
+        <div class="lawyerchat box2 introbox hidden">
+          어떡하노 변호사님과의 연락을 시작하겠습니다.
+        </div>
+        <div class="lawyerchat box1 introbox hidden">
+          안녕하세요. 상담을 요청합니다.
+        </div>
       </div>
-    </div>
-    <div class="lawyerchat main">
-        <div class="lawyerchat box2 introbox hidden"> 어떡하노 변호사님과의 연락을 시작하겠습니다. </div>
-        <div class="lawyerchat box1 introbox hidden"> 안녕하세요. 상담을 요청합니다. </div>
-    </div>
-    <div class="lawyerchat write">
+      <div class="lawyerchat write">
         <i class="fas fa-plus-circle"></i>
         <input id="chat-message-input" class="lawyerchat userwrite" placeholder="여기에 입력하세요"></textarea>
         <div class="lawyerchat send">
           <i class="far fa-paper-plane" id="chat-message-submit"></i>
         </div>
+      </div>
     </div>
-</div>
 
     <script type="text/javascript">
       // $(document).ready(function() {
@@ -402,8 +405,10 @@
         console.error('Chat socket closed unexpectedly');
     };
       $(document).ready(function() {
-        $('.introbox').fadeIn(1000).removeClass('hidden')
-      })
+        $(".introbox")
+          .fadeIn(1000)
+          .removeClass("hidden");
+      });
 
       $('input').click(function() {
         if (this.placeholder === "여기에 입력하세요") {
