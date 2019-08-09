@@ -36,4 +36,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('detail_list/', views.detail_list, name='detail_list'),
     path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
+    path('centerchat/', views.centerchat, name='centerchat'),
 ]

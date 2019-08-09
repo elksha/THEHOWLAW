@@ -98,3 +98,6 @@ def detail_list(request):
 
 def lawyer_chat(request):
     return render(request, 'room.html')
+
+def centerchat(request):
+    return render(request, 'centerchat.html')
