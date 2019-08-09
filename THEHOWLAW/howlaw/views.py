@@ -142,4 +142,4 @@ def detail_list(request):
 
 
 def lawyer_chat(request):
-    return render(request, 'lawyerchat.html')
+    return render(request, 'room.html')
