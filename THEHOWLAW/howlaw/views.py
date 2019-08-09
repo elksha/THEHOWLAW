@@ -34,7 +34,7 @@ def posting(request):
 
         post.save()
 
-        return redirect('detail', post_pk = post.pk)
+        return redirect('home')
     else:
         form = PostForm()
         
@@ -101,3 +101,6 @@ def lawyer_chat(request):
 
 def centerchat(request):
     return render(request, 'centerchat.html')
+
+def private(request):
+    return render(request, 'registration/private.html')

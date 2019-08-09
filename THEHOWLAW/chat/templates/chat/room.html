@@ -437,6 +437,7 @@
           let newchat = '<div class="lawyerchat box2">' + this.value +  '</div>'
           $('.main').append(newchat)
           this.value = ""
+          $('.lawyerchat .main').animate({scrollTop: $(document).height()}, 'slow')
         }
       })
 
