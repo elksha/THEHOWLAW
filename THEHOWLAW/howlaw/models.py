@@ -3,11 +3,11 @@ from django.utils import timezone
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=50)
-    img = models.FileField(null=True)
     name = models.CharField(max_length=200,)
     pwd = models.CharField(max_length=200,)
+    title = models.CharField(max_length=50)
     post = models.TextField()
+    img = models.FileField(null=True)
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
