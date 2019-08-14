@@ -90,11 +90,13 @@
                   <div role="separator" class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">상담사례</a>
                 </div>
-            <input type="hidden" name="search_param" value="all" id="search_param">
-            <input style="z-index: 0;" type="search" placeholder="검색해보세요" aria-describedby="button-addon2" class="form-control border-0 bg-light">
-            <div class="input-group-prepend">
-                <button style="z-index: 0;" id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>                 
-            </div>
+                <form action="{% url 'search' %}" method="GET">
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input style="z-index: 0;" type="text" name="query" placeholder="검색해보세요" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+                    <div class="input-group-prepend">
+                        <button style="z-index: 0;" id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>                 
+                    </div>
+                </form>
             </div>
     </div>
     <!-- 홈메인 -->

@@ -22,10 +22,11 @@ urlpatterns = [
     url(r'^chat/', include('chat.urls'), name='chat'),
     url(r'^admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('/search', views.search, name="search"),
     path('posting/', views.posting, name='posting'),
     path('detail/<int:post_pk>/', views.detail, name='detail'),
-    path('edit/<int:post_pk>/', views.edit, name = 'edit'),
-    path('delete/<int:post_pk>/', views.delete, name = 'delete'),
+    path('edit/<int:post_pk>/', views.edit, name='edit'),
+    path('delete/<int:post_pk>/', views.delete, name='delete'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
     path('accounts/', include('allauth.urls')),
@@ -36,6 +37,10 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('detail_list/', views.detail_list, name='detail_list'),
     path('chat/lawyer_chat/', views.lawyer_chat, name='lawyer_chat'),
+<<<<<<< HEAD
     path('centerchat/', views.centerchat, name='centerchat'),
     path('private/', views.private, name='private'),
 ]
+=======
+]
+>>>>>>> bc10c670a8ec571482723ce9539fcf0ce9855075
